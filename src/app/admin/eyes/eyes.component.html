@@ -1,0 +1,101 @@
+<div>
+    <div class="box">
+        <div class="box-header with-border">
+            <div class="d-flex justify-content-beetwen">
+                <h3 class="box-title">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Productos de Labios</font>
+                    </font>
+                </h3>
+                <br>
+                <br>
+
+                <div class="d-flex justify-content-around">
+                    <!--aqui va el formulario-->
+                    <a [routerLink]="['/admin/add']" class="btn btn-success" style="background-color: #fd7f87">AGREGAR</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 10px">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Identificación</font>
+                            </font>
+                        </th>
+                        <th>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Nombre</font>
+                            </font>
+                        </th>
+                        <th>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Descripción</font>
+                            </font>
+                        </th>
+                        <th>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Precio</font>
+                            </font>
+                        </th>
+                        <th>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Imagen</font>
+                            </font>
+                        </th>
+                        <th style="width: 100px">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"></font>
+                            </font>
+                        </th>
+                    </tr>
+                    <tr *ngFor="let item of EyesProducts; index as i">
+                        <td>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">{{item.id}}</font>
+                            </font>
+                        </td>
+                        <td>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">{{item.name}}</font>
+                            </font>
+                        </td>
+                        <td>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">{{item.description}}</font>
+                            </font>
+                        </td>
+                        <td>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">{{item.price | currency}}</font>
+                            </font>
+                        </td>
+                        <td>
+                            <img [src]="item.img" class="media-object" style="
+                            width: 100px;
+                            height: auto;
+                            border-radius: 4px;
+                            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+                          " >
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-success btn-flat" (click)="update(item)"><i class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger btn-flat"  (click)="deleteProductEye(item)" style="background-color: #fd7f87"><i class="fas fa-trash-alt" ></i></button>
+                                    </div>
+                                </td>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+

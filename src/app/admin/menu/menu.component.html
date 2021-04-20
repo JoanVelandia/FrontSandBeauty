@@ -1,0 +1,41 @@
+<aside class="main-sidebar">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel">
+      <div class="image">
+        <img src="./../../../assets/images/user2.jpg" class="img-circle" style="align-items: center">
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu" data-widget="tree">
+      <li>
+        <a (click)=navigateReports();>
+          <i class="fa fa-chart-bar">
+          </i>
+          <span>
+            Reportes
+          </span>
+        </a>
+      </li>
+      <li class="treeview">
+        <a ><i class="fa fa-box-open"></i> <span>Productos</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a [routerLink]="['face']"><i class="fa fa-user" (click)="navigateFace('face')"></i>Rostro</a></li>
+          <li><a [routerLink]="['eyes']"><i class="fa fa-user" (click)="navigateFace('eyes')"></i>Ojos</a></li>
+          <li><a [routerLink]="['lips']"><i class="fa fa-user" (click)="navigateFace('lips')"></i>Labios</a></li>
+
+        </ul>
+      </li>
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>

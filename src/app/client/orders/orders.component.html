@@ -1,0 +1,33 @@
+<div *ngFor="let currentOrder of orders; index as i">
+  <section class="content" style="padding: 0px; min-height: 0;">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box" style="margin: 0;">
+          <div class="box-header with-border">
+            <h3 class="box-title">Pedido N° {{i}}</h3>
+          </div>
+          <div class="box-body table-responsive">
+            <table class="table table-bordered">
+              <tr>
+                <th>Fecha de entrega</th>
+                <th>Total</th>
+                <th style="width: 80px">Ver Detalle</th>
+              </tr>
+              <tr>
+                <td>{{currentOrder.date}}</td>
+                <td>{{currentOrder.total | currency}}</td>
+                <td>
+                  <a (click) ="detailOrderNavigate(i)">
+                    <button type="button" class="btn btn-block btn-danger">
+                      Ver
+                    </button>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

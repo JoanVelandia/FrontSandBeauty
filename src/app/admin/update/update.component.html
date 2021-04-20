@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h3 style="color: #fd7f87; font: blond">Editar Producto</h3>
+    </div>
+    <form (ngSubmit)="update()" name="loginForm" [formGroup]="loginForm">
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Nombre</mat-label>
+          <input formControlName="name" matInput [type]=" hide ? 'name' : 'text'" placeholder="Ingrese el nuevo nombre"
+            required />
+        </mat-form-field>
+      </div>
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Descripción</mat-label>
+          <input formControlName="desc" matInput placeholder="Ingrese la nueva descripción" required />
+        </mat-form-field>
+      </div>
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Precio</mat-label>
+          <input type="number" formControlName="price" matInput placeholder="Ingrese el nuevo precio" required />
+        </mat-form-field>
+      </div>
+      <button mat-flat-button style="background-color: #fd7f87; color:#fff">Guardar</button>
+    </form>
+    <button mat-flat-button style="background-color: #a01c25; color:#fff">Descartar</button>
+  </mat-card-content>
+</mat-card>

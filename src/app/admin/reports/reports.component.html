@@ -1,0 +1,28 @@
+<div *ngFor="let currentOrder of Orders; index as i">
+    <section class="content" style="padding: 0px; min-height: 0;">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box" style="margin: 0;">
+            <div class="box-header with-border">
+              <h3 class="box-title">Venta N° {{i}}</h3>
+            </div>
+            <div class="box-body table-responsive">
+              <table class="table table-bordered">
+                <tr>
+                  <th style="width: 250px;"><font style="vertical-align: inherit;">Usuario</font></th>
+                  <th><font style="vertical-align: inherit;">Fecha de Compra</font></th>
+                  <th><font style="vertical-align: inherit;">Total</font></th>
+                </tr>
+                <tr>
+                  <td>{{currentOrder.buyer}}</td>
+                  <td>{{currentOrder.date}}</td>
+                  <td>{{currentOrder.total | currency}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+

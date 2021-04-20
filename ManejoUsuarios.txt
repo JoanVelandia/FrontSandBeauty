@@ -1,0 +1,9 @@
+Para entrar como administrador al sistema use las siguientes credenciales
+
+Usuario: Yemeye
+Pass: admin
+
+Usuario: Velandia
+Pass: admin
+
+o en el archivo users.json agregar un nuevo usuario con el rol administrador ya que todos los usuarios que se crean desde el componente login son clientes.

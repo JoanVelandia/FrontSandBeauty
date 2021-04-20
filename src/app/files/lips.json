@@ -1,0 +1,72 @@
+[
+    {
+      "id": "LIP-01",
+      "name": "BALSAMO PARA LABIOS COCONUT LIP MASK",
+      "img": "assets/images/LIP-01.jpg",
+      "price": 15000,
+      "description": "El Bálsamo de labios de coco proporciona una hidratación intensa para nutrir los labios durante todo el día o durante la noche. El coco contiene emolientes que acondicionan la piel para suavizarla,e hidratarla. Con una infusión de vitamina E para labios suaves e hidratados"
+    },
+    {
+      "id": "LIP-02",
+      "name": "BRILLO DUO CHORMATIC LIP GLOSS",
+      "img": "assets/images/LIP-02.jpg",
+      "price": 25000,
+      "description": "¿Quieres unos labios absolutamente fascinantes? Entonces, el look cromado de Duo Chromatic Lip Gloss y sus nácares radiantes es lo que estabas buscando. Este gloss aporta un brillo impresionante, un toque de color y un acabado en 3D intenso. Sus tonos ligeros se deslizan sobre los labios con delicadeza sin dejar una sensación pegajosa. Llévalos solos o encima de un labial para un efecto inolvidable"
+    },
+    {
+      "id": "LIP-03",
+      "name": "BRILLO LIP OIL GLOSS",
+      "img": "assets/images/LIP-03.jpg",
+      "price": 7000,
+      "description": "El brillo labial hidratante le da un brillo incoloro a los labios, su textura no es pegajosa y es muy cómoda."
+    },
+    {
+      "id": "LIP-04",
+      "name": "BRILLO LIPGLOSS MAGIC YOUR LIFE",
+      "img": "assets/images/LIP-04.jpg",
+      "price": 6000,
+      "description": "Brillo destellos magic, Ideal para darle un color rosado a tus labios, se activa el color con el calor de tus labios, humecta tus labios, da brillo y color instantáneo"
+    },
+    {
+      "id": "LIP-05",
+      "name": "EXFOLIANTE PARA LABIOS CARE LIPS SCRUB FUN",
+      "img": "assets/images/LIP-05.jpg",
+      "price": 7000,
+      "description": "Exfoliante labial en barra, Aromas distintos, contiene aceites hidratantes y nutritivos, Libre de crueldad animal"
+    },
+    {
+      "id": "LIP-06",
+      "name": "EXFOLIANTE PARA LABIOS SUGAR KISS",
+      "img": "assets/images/LIP-06.jpg",
+      "price": 10000,
+      "description": "Exfóliate los labios con Sugar Kiss, es una fórmula de azúcar real fusionada con aceite de frutas y manteca de Karité para dejar a un lado esos labios secos y escamosos, disponibles en 3 sabores diferentes, vainilla, fresa o café. Dejaran los labios suaves y preparados para aplicar el labial o también para hidratar y limpiar luego de haber usado el labial"
+    },
+    {
+      "id": "LIP-07",
+      "name": "BRILLO DE LABIOS CRYSTAL LIP GLAZE",
+      "img": "assets/images/LIP-07.jpg",
+      "price": 10000,
+      "description": "Brillo labial aromatizado con aloe vera hidratante y vitamina E."
+    },
+    {
+      "id": "LIP-08",
+      "name": "VOLUMINIZADOR DE LABIOS",
+      "img": "assets/images/LIP-08.jpg",
+      "price": 12000,
+      "description": "Este producto ayuda a mejorar la apariencia de los labios generando color y volumen"
+    },
+    {
+      "id": "LIP-09",
+      "name": "LIP MASK DE PROPOLEOL",
+      "img": "assets/images/LIP-09.jpg",
+      "price": 15000,
+      "description": "El producto lip mask de propoleo contiene ricos factores hidratantes, que pueden penetrar rápidamente en los labios, proporcionando suficiente nutrición y humedad, teniendo como resultado unos labios hidratados y suaves."
+    },
+    {
+      "id": "LIP-10",
+      "name": "LABIAL SOFT MATTE",
+      "img": "assets/images/LIP-10.jpg",
+      "price": 20000,
+      "description": "Probablemente uno de los labiales más famosos. Son cremosos, matte y con un acabado sedoso y suave que te aportarán una explosión de color vaya a donde vayas."
+    }
+  ]

@@ -1,0 +1,32 @@
+<div *ngFor="let product of cart">
+  <div class="no-print">
+    <div class="info-box bg-red" style="min-height: 130px;">
+      <span class="info-box-icon" style="width: 121px; height: 131px;">
+        <i class="widget-user-image">
+          <img style="width: 100px; border-radius: 50%; height: -webkit-fill-available;" class="img-circle"
+            [src]="product.img" alt="User Avatar">
+        </i>
+      </span>
+      <div class="info-box-content" style="margin-left: 122px;">
+        <span class="info-box-text">{{product.name}}</span>
+        <span class="info-box-number">{{product.price | currency}}</span>
+        <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+        <span class="progress-description">
+          {{product.description}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="amoutCarts>=0">
+  <div class="row" style="display: flex; justify-content: center;">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <button type="button" class="btn btn-block btn-success btn-lg" (click)="buy(cart)">Finalizar Compra</button>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <button type="button" class="btn btn-block btn-danger btn-lg"(click)="cancelBuy()">Cancelar Compra</button>
+    </div>
+  </div>
+</div>

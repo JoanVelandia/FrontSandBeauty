@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h3 style="color: #fd7f87; font: blond">INICIAR SESIÓN </h3>
+    </div>
+    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Nombre de usuario</mat-label>
+          <input formControlName="nickname" matInput placeholder="Ingrese un nombre de usuario" required />
+          <mat-error *ngIf="!loginForm.controls['nickname'].valid">
+            Usuario requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <span>
+          <a class="text-link" class="aLink" >Forgot Password?</a>
+        </span>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Contraseña</mat-label>
+          <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>
+              {{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid">
+            Contraseña requerida
+          </mat-error>
+        </mat-form-field>
+      </div>
+        <button mat-flat-button style="background-color: #fd7f87; color:#fff" >Iniciar Sesión</button>
+    </form>
+
+    <div class="button-row">
+      <a [routerLink]="['/visitor/register']"><p style="color: #737373">REGISTRARSE</p></a>
+    </div>
+  </mat-card-content>
+</mat-card>

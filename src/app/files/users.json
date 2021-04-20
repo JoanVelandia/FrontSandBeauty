@@ -1,0 +1,22 @@
+[
+  {
+    "nickName": "Velandia",
+    "password": "admin",
+    "rol": true
+  },
+  {
+    "nickName": "Yemeye",
+    "password": "admin",
+    "rol": true
+  },
+  {
+    "nickName": "Client",
+    "password": "mypass",
+    "rol": false
+  },
+  {
+    "nickName": "OtherClient",
+    "password": "mypass",
+    "rol": false
+  }
+]
