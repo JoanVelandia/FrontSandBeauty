@@ -5,8 +5,8 @@ import { AdminComponent } from './admin.component';
 import { LipsComponent } from './lips/lips.component';
 import { EyesComponent } from './eyes/eyes.component';
 import { FaceComponent } from './face/face.component';
-import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
+import { AddComponent } from './add/add.component';
 
 const routes: Routes = [
   {

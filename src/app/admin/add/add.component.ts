@@ -36,12 +36,21 @@ export class AddComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
+    private router: Router,
     private localStorage: LocalStorageService,
     private productService: ProductsService) { }
 
   ngOnInit(): void {
     this.loadProducts();
+
   }
+
+  navigateEye(route: string): void
+  {
+    const rou = '/' + route;
+    this.router.navigate([rou]);
+  }
+
 
   loadProducts(): void {
     this.ProductosLips = this.localStorage.getLipsProducts();
@@ -51,17 +60,20 @@ export class AddComponent implements OnInit {
 
   add(): void {
     this.submitted = true;
-    const categ  = this.loginForm.controls.categoria.value;
+    const id  = this.loginForm.controls.id.value;
     const name  = this.loginForm.controls.name.value;
     const description  = this.loginForm.controls.description.value;
     const price  = this.loginForm.controls.price.value;
     const img  = this.loginForm.controls.img.value;
-    /************************************************************************/
-    const idCategory  = 1;
-    const stock  = 100;
-    /***********************************************************************/
+    const idCategory  = this.loginForm.controls.Categoria.value;
+    const stock  = this.loginForm.controls.stock.value;
+    const status = this.loginForm.controls.status.value;
 
-    let amoutProducts: number;
+    this.Product = new Product(id,idCategory, img,name, price, stock, description, status)
+
+    this.productService.saveProducts(this.Product)
+
+   /* let amoutProducts: number;
     if (this.localStorage.getItem('amoutProducts') !== null) {
       amoutProducts = this.localStorage.getItem('amoutProducts') as number;
     } else {
@@ -70,21 +82,21 @@ export class AddComponent implements OnInit {
 
     if (categ === 'EYE'){
       const newId: string = 'EYE-' + String(this.ProductosEyes.length);
-      this.Product = new Product(newId, idCategory, img, name, price, stock, description);
+      this.Product = new Product(newId, idCategory, img, name, price, stock, description, true);
       this.localStorage.setItem('new' + amoutProducts, this.Product);
 
     }
     if (categ === 'FACE'){
       const newId: string = 'FACE-' + String(this.ProductosEyes.length);
-      this.Product = new Product(newId,idCategory, img, name, price, stock, description);
+      this.Product = new Product(newId,idCategory, img, name, price, stock, description, true);
       this.localStorage.setItem('new' + amoutProducts, this.Product);
 
     }
     if (categ === 'LIP'){
       const newId: string = 'LIP-' + String(this.ProductosEyes.length);
-      this.Product = new Product(newId,idCategory, img, name, price,  stock, description);
+      this.Product = new Product(newId,idCategory, img, name, price,  stock, description, true);
       this.localStorage.setItem('new' + amoutProducts, this.Product);
-    }
+    }*/
 
   }
 

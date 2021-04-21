@@ -4,7 +4,7 @@
             <div class="d-flex justify-content-beetwen">
                 <h3 class="box-title">
                     <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Productos de Labios</font>
+                        <font style="vertical-align: inherit;">Productos de Ojos</font>
                     </font>
                 </h3>
                 <br>
@@ -12,7 +12,7 @@
 
                 <div class="d-flex justify-content-around">
                     <!--aqui va el formulario-->
-                    <a [routerLink]="['/admin/add']" class="btn btn-success" style="background-color: #fd7f87">AGREGAR</a>
+                    <button type="button" class="btn btn-success" style="background-color: #fd7f87" (click)="navigate()">AGREGAR</button>
                 </div>
             </div>
         </div>
@@ -43,16 +43,21 @@
                         </th>
                         <th>
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Imagen</font>
+                                <font style="vertical-align: inherit;">Estado</font>
                             </font>
                         </th>
+                        <th>
+                          <font style="vertical-align: inherit;">
+                              <font style="vertical-align: inherit;">Imagen</font>
+                          </font>
+                      </th>
                         <th style="width: 100px">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;"></font>
                             </font>
                         </th>
                     </tr>
-                    <tr *ngFor="let item of EyesProducts; index as i">
+                    <tr *ngFor="let item of eyesProducts; index as i">
                         <td>
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">{{item.id}}</font>
@@ -73,6 +78,11 @@
                                 <font style="vertical-align: inherit;">{{item.price | currency}}</font>
                             </font>
                         </td>
+                        <td>
+                          <font style="vertical-align: inherit;">
+                              <font style="vertical-align: inherit;">{{item.status}}</font>
+                          </font>
+                      </td>
                         <td>
                             <img [src]="item.img" class="media-object" style="
                             width: 100px;

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/core/models/order/order.model';
 import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
+import { ProductsService } from 'src/app/core/services/products/products.service';
 import { LocalStorageService } from './../../core/services/localStorage/local-storage.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class EyesComponent implements OnInit {
 
   constructor(
     private localStorage: LocalStorageService,
+    private productService: ProductsService
   ) { }
 
   ngOnInit(): void {
@@ -26,12 +28,19 @@ export class EyesComponent implements OnInit {
 
   loadProducts(): void
   {
-    this.eyesProducts = this.localStorage.getEyesProducts();
-    if (this.localStorage.getItem('CURRENT_USER') !== null)
-    {
+    this.productService.getEyesProducts().subscribe( eyesProducts => {
+      console.log("REST API\n");
+      console.log(eyesProducts);
+      console.log("LocalStorage\n");
+      console.log(this.localStorage.getEyesProducts());
+      this.eyesProducts = eyesProducts;
+    });
+
+    if (this.localStorage.getItem('CURRENT_USER') !== null) {
       this.client = true;
     }
   }
+
   generateOrder(item: Product): void
   {
     const buyer: User = this.localStorage.getItem('CURRENT_USER') as User;

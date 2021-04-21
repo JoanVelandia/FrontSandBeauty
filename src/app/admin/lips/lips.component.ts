@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
 import {LocalStorageService } from './../../core/services/localStorage/local-storage.service';
+import { ProductsService } from 'src/app/core/services/products/products.service';
 
 
 @Component({
@@ -15,10 +16,12 @@ import {LocalStorageService } from './../../core/services/localStorage/local-sto
 export class LipsComponent implements OnInit {
 
   LipsProducts: Product [] = [];
+  client = false;
 
   constructor(
     private localStorage: LocalStorageService,
-    private route: Router
+    private route: Router,
+    private productService: ProductsService,
     )
     { }
 
@@ -28,7 +31,24 @@ export class LipsComponent implements OnInit {
 
   loadProducts(): void
   {
-    this.LipsProducts = this.localStorage.getLipsProducts();
+    this.productService.getFaceProducts().subscribe( lipsProducts => {
+      console.log("REST API\n");
+      console.log(lipsProducts);
+      console.log("LocalStorage\n");
+      console.log(this.localStorage.getLipsProducts());
+      this.LipsProducts = lipsProducts;
+    });
+
+    if (this.localStorage.getItem('CURRENT_USER') !== null) {
+      this.client = true;
+    }
+  }
+
+  navigate(): void
+  {
+    const currentUser = this.localStorage.getItem('CURRENT_USER') as User;
+    const route = '/admin/' + currentUser.nickName + '/add/';
+    this.route.navigate([route]);
   }
 
   deleteProductLip(item: Product): void {

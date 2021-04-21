@@ -3,6 +3,7 @@ import { Product } from '../../models/product/product.model';
 import { LocalStorageService } from '../localStorage/local-storage.service';
 import {HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -17,20 +18,29 @@ export class ProductsService {
   constructor(
     private localStrorageService: LocalStorageService,
     private request: HttpClient,
+    private route: Router,
 
   ) {}
 
   getLipsProducts(): Observable<Product[]> {
 
-    return this.request.get<Product[]>('/SandBeauty/api/products/all');
+    return this.request.get<Product[]>('/SandBeauty/api/products/category/3');
   }
 
-  getFaceProducts(): Product[] {
-    return this.FaceProducts;
+  getFaceProducts(): Observable<Product[]> {
+    return this.request.get<Product[]>('/SandBeauty/api/products/category/2');
   }
-  getEyesProducts(): Product[] {
-    return this.EyesProducts;
+  getEyesProducts(): Observable<Product[]> {
+    return this.request.get<Product[]>('/SandBeauty/api/products/category/1');
   }
+
+  saveProducts(item: Product): Observable<Product>{
+    return this.request.post<Product>('/SandBeauty/api/products/save', item);
+  }
+
+//  delete(item: Product): Observable<Product[]>{
+//    const route = '/SandBeauty/api/products/delete/'+item.id;
+
 
   get(idBefore: string): Product {
     let produc: Product;
