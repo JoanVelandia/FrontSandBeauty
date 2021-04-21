@@ -6,21 +6,21 @@
       {
         "id": "EYE-01",
         "name": "DELINEADOR TATTO EYELINER",
-        "img": "assets/images/EYE-01.jpg",
+        "imgUrl": "assets/images/EYE-01.jpg",
         "price": 14000,
         "description": "El delineador liquido tatto eyeliner está diseñado para realizar trazos de cualquier tamaño de forma fácil y rápida gracias a su punta fina, ofrece alta pigmentación y larga duración."
       },
       {
         "id": "EYE-02",
         "name": "SOBRA ORANGE POP",
-        "img": "assets/images/EYE-02.jpg",
+        "imgUrl": "assets/images/EYE-02.jpg",
         "price": 48000,
         "description": "La sombra ORANGE POP By Kara beauty  es una combinación perfecta para recrear tus mejores looks de día o noche en tonos tierras y cálidos ."
       },
       {
         "id": "FACE-01",
         "name": "BASE TRULY MATTE",
-        "img": "assets/images/FACE-01.jpg",
+        "imgUrl": "assets/images/FACE-01.jpg",
         "price": 30000,
         "description": "La fórmula de alto pigmento de larga duración se aplica como un líquido y se mezcla para obtener un hermoso acabado mate parecido al polvo. Disponible en 14 tonos para complementar una amplia gama de tonos de piel"
       }
@@ -34,21 +34,21 @@
       {
         "id": "EYE-05",
         "name": "PESTAÑINA THE COLOSSAL VOLUM EXPRESS",
-        "img": "assets/images/EYE-05.jpg",
+        "imgUrl": "assets/images/EYE-05.jpg",
         "price": 28000,
         "description": "Contiene colágeno y el Mega Brush alcanza instantáneamente 9 veces el volumen.Su mega cepillo, el doble que un cepillo normal, rápido y fácil de usar, consigue en una sola pasada un volumen extremo al instante, sin grumos, para unas pestañas más voluminosas, más gruesas, impactantes."
       },
       {
         "id": "EYE-07",
         "name": "POMADA PARA CEJAS RUBY ROSE",
-        "img": "assets/images/EYE-07.jpg",
+        "imgUrl": "assets/images/EYE-07.jpg",
         "price": 8000,
         "description": "La pomada para cejas, son un producto en crema (parecido a un betún) que nos ayuda a crear un estilo natural y ligero, además, tiene la ventaja de fijarse mejor, por tanto, son una excelente opción para lograr unas cejas naturales y bien definidas por más tiempo."
       },
       {
         "id": "FACE-05",
         "name": "ILUMINADOR KHOL",
-        "img": "assets/images/FACE-05.jpg",
+        "imgUrl": "assets/images/FACE-05.jpg",
         "price": 32000,
         "description": "El iluminador otorga un aspecto bronceado en la piel, aporta luminosidad y puede ser utilizado para lograr contornos perfectos en determinadas zonas del cuerpo"
       }
@@ -62,7 +62,7 @@
       {
         "id": "LIP-10",
         "name": "LABIAL SOFT MATTE",
-        "img": "assets/images/LIP-10.jpg",
+        "imgUrl": "assets/images/LIP-10.jpg",
         "price": 20000,
         "description": "Probablemente uno de los labiales más famosos. Son cremosos, matte y con un acabado sedoso y suave que te aportarán una explosión de color vaya a donde vayas."
       }
@@ -76,21 +76,21 @@
       {
         "id": "LIP-05",
         "name": "EXFOLIANTE PARA LABIOS CARE LIPS SCRUB FUN",
-        "img": "assets/images/LIP-05.jpg",
+        "imgUrl": "assets/images/LIP-05.jpg",
         "price": 7000,
         "description": "Exfoliante labial en barra, Aromas distintos, contiene aceites hidratantes y nutritivos, Libre de crueldad animal"
       },
       {
         "id": "LIP-07",
         "name": "BRILLO DE LABIOS CRYSTAL LIP GLAZE",
-        "img": "assets/images/LIP-07.jpg",
+        "imgUrl": "assets/images/LIP-07.jpg",
         "price": 10000,
         "description": "Brillo labial aromatizado con aloe vera hidratante y vitamina E."
       },
       {
         "id": "FACE-09",
         "name": "PRIME & CHILL BEAUTY OI",
-        "img": "assets/images/FACE-09.jpg",
+        "imgUrl": "assets/images/FACE-09.jpg",
         "price": 15000,
         "description": "Este Espectacular Prime & Chill Beauty Oil , está compuesto de aceite de almendra, jojoba y girasol perfecto para preparar e hidratar la piel, dejándola sedosa y cuidada al mismo tiempo , ideal para usar como primer antes del maquillaje para tener un rostro húmedo y con textura suave o mezclándolo con base liquida para obtener resultados fabulosos en tu maquillaje con acabado natural."
       }
@@ -104,7 +104,7 @@
       {
         "id": "FACE-10",
         "name": "PALETA CHEEK GLOW STUDIO",
-        "img": "assets/images/FACE-10.jpg",
+        "imgUrl": "assets/images/FACE-10.jpg",
         "price": 22000,
         "description": "La paleta cheek glow studio esta diseñada especialmente para los amantes al maquillaje."
       }
@@ -118,21 +118,21 @@
       {
         "id": "EYE-01",
         "name": "DELINEADOR TATTO EYELINER",
-        "img": "assets/images/EYE-01.jpg",
+        "imgUrl": "assets/images/EYE-01.jpg",
         "price": 14000,
         "description": "El delineador liquido tatto eyeliner está diseñado para realizar trazos de cualquier tamaño de forma fácil y rápida gracias a su punta fina, ofrece alta pigmentación y larga duración."
       },
       {
         "id": "EYE-02",
         "name": "SOBRA ORANGE POP",
-        "img": "assets/images/EYE-02.jpg",
+        "imgUrl": "assets/images/EYE-02.jpg",
         "price": 48000,
         "description": "La sombra ORANGE POP By Kara beauty  es una combinación perfecta para recrear tus mejores looks de día o noche en tonos tierras y cálidos ."
       },
       {
         "id": "FACE-01",
         "name": "BASE TRULY MATTE",
-        "img": "assets/images/FACE-01.jpg",
+        "imgUrl": "assets/images/FACE-01.jpg",
         "price": 30000,
         "description": "La fórmula de alto pigmento de larga duración se aplica como un líquido y se mezcla para obtener un hermoso acabado mate parecido al polvo. Disponible en 14 tonos para complementar una amplia gama de tonos de piel"
       }

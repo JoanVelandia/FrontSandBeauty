@@ -17,15 +17,12 @@ export class AddComponent implements OnInit {
   ProductosFace: Product[] = [];
   ProductosLips: Product[] = [];
   Product!: Product;
+  public form!: FormGroup;
 
   hide: boolean = Boolean();
 
   loginForm: FormGroup = this.fb.group({
-    name: [''],
-    price: [''],
-    description: [''],
-    img: [''],
-    categoria: ['']
+
   });
 
 
@@ -42,7 +39,16 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProducts();
-
+    this.form = this.fb.group({
+    name: [''],
+    id: [''],
+    price: [''],
+    description: [''],
+    stock: [''],
+    status: [''],
+    img: [''],
+    categoria: ['']
+    })
   }
 
   navigateEye(route: string): void
@@ -60,18 +66,20 @@ export class AddComponent implements OnInit {
 
   add(): void {
     this.submitted = true;
-    const id  = this.loginForm.controls.id.value;
-    const name  = this.loginForm.controls.name.value;
-    const description  = this.loginForm.controls.description.value;
-    const price  = this.loginForm.controls.price.value;
-    const img  = this.loginForm.controls.img.value;
-    const idCategory  = this.loginForm.controls.Categoria.value;
-    const stock  = this.loginForm.controls.stock.value;
-    const status = this.loginForm.controls.status.value;
+    const id  = this.form.value.id;
+    const name  = this.form.value.name;
+    const description  = this.form.value.description;
+    const price  = this.form.value.price;
+    const imgURL  = this.form.value.img;
+    const idCategory  = this.form.value.categoria;
+    const stock  = this.form.value.stock;
+    const status = this.form.value.status;
+    console.log("medio funciona")
+    console.log(stock)
 
-    this.Product = new Product(id,idCategory, img,name, price, stock, description, status)
-
-    this.productService.saveProducts(this.Product)
+    const item = new Product(id,idCategory, imgURL,name, price, stock, description, status);
+    console.log(item.id)
+    this.productService.saveProducts(item).subscribe(Product => console.log(Product))
 
    /* let amoutProducts: number;
     if (this.localStorage.getItem('amoutProducts') !== null) {

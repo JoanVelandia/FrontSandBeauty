@@ -1,55 +1,52 @@
-<mat-card>
-    <mat-card-content>
-      <div class="header">
-        <h3 style="color: #fd7f87; font: blond">Editar Producto</h3>
-      </div>
-      <form (ngSubmit)="add()" name="loginForm" [formGroup]="loginForm" style="align-items: center;">
-        <div class="emailInput">
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label style="color: #fd7f87" >Identificación</mat-label>
-              <input formControlName="id" matInput placeholder="Ingrese la identificación" required />
-            </mat-form-field>
-          </div>
-          <div class="emailInput">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label style="color: #fd7f87">Nombre</mat-label>
-            <input formControlName="name" matInput [type]=" hide ? 'name' : 'text'" placeholder="Ingrese el  nombre"required />
-          </mat-form-field>
-        </div>
-        <div class="emailInput">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label style="color: #fd7f87">Descripción</mat-label>
-            <input formControlName="description" matInput placeholder="Ingrese la descripción" required />
-          </mat-form-field>
-        </div>
-        <div class="emailInput">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label style="color: #fd7f87">Precio</mat-label>
-            <input formControlName="price" matInput placeholder="Ingrese el precio" required />
-          </mat-form-field>
-        </div>
-        <div class="emailInput">
-          <h4 style="color:#fd7f87">Ingrese la categoria del producto, 1 para Ojos, 2 para Rostro y 3 para labios</h4>
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label style="color: #fd7f87">Categoria</mat-label>
-              <input formControlName="Categoria" matInput placeholder="Ingrese la categoria: 1 para ojos| 2 para rostro| 3 para labios " required />
-            </mat-form-field>
-          </div>
-          <div class="emailInput">
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label style="color: #fd7f87">Stock</mat-label>
+
+<div class="header">
+  <h3 style="color: #fd7f87; font: blond">Editar Producto</h3>
+</div>
+<form (submit)="add()" name="form" [formGroup]="form" style="align-items: center;">
+  <div class="emailInput">
+    <mat-form-field class="full-width" appearance="outline">
+    <mat-label style="color: #fd7f87" >Identificación</mat-label>
+      <input formControlName="id" matInput placeholder="Ingrese la identificación" required />
+    </mat-form-field>
+  </div>
+    <div class="emailInput">
+    <mat-form-field class="full-width" appearance="outline">
+    <mat-label style="color: #fd7f87">Nombre</mat-label>
+      <input formControlName="name" matInput [type]=" hide ? 'name' : 'text'" placeholder="Ingrese el  nombre"required />
+    </mat-form-field>
+  </div>
+  <div class="emailInput">
+    <mat-form-field class="full-width" appearance="outline">
+    <mat-label style="color: #fd7f87">Descripción</mat-label>
+      <input formControlName="description" matInput placeholder="Ingrese la descripción" required />
+    </mat-form-field>
+  </div>
+  <div class="emailInput">
+    <mat-form-field class="full-width" appearance="outline">
+    <mat-label style="color: #fd7f87">Precio</mat-label>
+      <input formControlName="price" matInput placeholder="Ingrese el precio" required />
+    </mat-form-field>
+  </div>
+    <div class="emailInput">
+      <h4 style="color:#fd7f87">Ingrese la categoria del producto, 1 para Ojos, 2 para Rostro y 3 para labios</h4>
+      <mat-form-field class="full-width" appearance="outline">
+      <mat-label style="color: #fd7f87">Categoria</mat-label>
+        <input formControlName="categoria" matInput placeholder="Ingrese la categoria: 1 para ojos| 2 para rostro| 3 para labios " required />
+      </mat-form-field>
+    </div>
+    <div class="emailInput">
+      <mat-form-field class="full-width" appearance="outline">
+      <mat-label style="color: #fd7f87">Stock</mat-label>
               <input formControlName="stock" matInput placeholder="Ingrese el stock " required />
-            </mat-form-field>
-          </div>
-          <div class="emailInput">
-            <h4 style="color:#fd7f87">Ingrese el estado: ACTIVO O DESACTIVO</h4>
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label style="color: #fd7f87">Estado</mat-label>
-              <input formControlName="status" matInput placeholder="Ingrese el estado: ACTIVO | DESACTIVO " required />
-            </mat-form-field>
-          </div>
-        <button mat-flat-button style="background-color: #fd7f87; color:#fff" (click)="navigateEye('eyes')" >Guardar</button>
-        <button mat-flat-button style="background-color: #a01c25; color:#fff">Descartar</button>
-      </form>
-    </mat-card-content>
-  </mat-card>
+      </mat-form-field>
+    </div>
+    <div class="emailInput">
+      <h4 style="color:#fd7f87">Ingrese el estado: ACTIVO O DESACTIVO</h4>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label style="color: #fd7f87">Estado</mat-label>
+          <input formControlName="status" matInput placeholder="Ingrese el estado: ACTIVO | DESACTIVO " required />
+        </mat-form-field>
+    </div>
+  <button mat-flat-button style="background-color: #fd7f87; color:#fff">Guardar</button>
+  <button mat-flat-button style="background-color: #a01c25; color:#fff">Descartar</button>
+</form>

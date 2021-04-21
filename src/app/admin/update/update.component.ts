@@ -48,7 +48,7 @@ export class UpdateComponent implements OnInit {
 
     const idPrev = this.route.snapshot.paramMap.get('product') as string;
     const prevProduct: Product = this.getPrev(idPrev) as Product;
-    newProduct = new Product(idPrev, idCategory, prevProduct.img, name, price, stock, desc, 'ACTIVO');
+    newProduct = new Product(idPrev, idCategory, prevProduct.imgUrl, name, price, stock, desc, 'ACTIVO');
 
     this.currentUser = this.localStorageService.getItem('CURRENT_USER') as User;
     this.productService.change(prevProduct, newProduct);

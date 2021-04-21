@@ -9,6 +9,7 @@ import { EyesComponent } from './products/eyes/eyes.component';
 import { FaceComponent } from './products/face/face.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,

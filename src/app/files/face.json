@@ -1,72 +1,142 @@
 [
-    {
-      "id": "FACE-01",
+  {
+      "id": 11,
+      "idCategory": 2,
       "name": "BASE TRULY MATTE",
-      "img": "assets/images/FACE-01.jpg",
-      "price": 30000,
-      "description": "La fórmula de alto pigmento de larga duración se aplica como un líquido y se mezcla para obtener un hermoso acabado mate parecido al polvo. Disponible en 14 tonos para complementar una amplia gama de tonos de piel"
-    },
-    {
-      "id": "FACE-02",
+      "price": 30000.0,
+      "stock": 350,
+      "description": "La fórmula de alto pigmento de larga duración se aplica como un líquido y se mezcla para obtener un hermoso acabado mate parecido al polvo. Disponible en 14 tonos para complementar una amplia gama de tonos de piel",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 12,
+      "idCategory": 2,
       "name": "BASE LIQUIDA FEELS",
-      "img": "assets/images/FACE-02.jpg",
-      "price": 19000,
-      "description": "La base de la línea FEELS proporciona una cobertura alta, ideal para corregir imperfecciones e igualar el tono de la piel, sin dejar una apariencia pesada. Tiene una textura de mousse dejando la piel con un toque aterciopelado"
-    },
-    {
-      "id": "FACE-03",
+      "price": 19000.0,
+      "stock": 250,
+      "description": "La base de la línea FEELS proporciona una cobertura alta, ideal para corregir imperfecciones e igualar el tono de la piel, sin dejar una apariencia pesada. Tiene una textura de mousse dejando la piel con un toque aterciopelado",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 13,
+      "idCategory": 2,
       "name": "CORRECTOR Y CONTORNO FEELS",
-      "img": "assets/images/FACE-03.jpg",
-      "price": 15000,
-      "description": "Este corrector tiene una alta cobertura, textura cremosa y tacto seco, perfecto para corregir y camuflar pequeñas imperfecciones o para iluminar los puntos altos de la cara, ya que los tonos más oscuros se pueden usar como contorno líquido."
-    },
-    {
-      "id": "FACE-04",
+      "price": 15000.0,
+      "stock": 300,
+      "description": "Este corrector tiene una alta cobertura, textura cremosa y tacto seco, perfecto para corregir y camuflar pequeñas imperfecciones o para iluminar los puntos altos de la cara, ya que los tonos más oscuros se pueden usar como contorno líquido",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 14,
+      "idCategory": 2,
       "name": "CORRECTOR INSTANT AGE REWIND MAYBELLINE",
-      "img": "assets/images/FACE-04.jpg",
-      "price": 36000,
-      "description": "Su fórmula concentrada con Bayas de Goji y Haloxyl trata y reafirma bolsas y ojeras con el uso continuo, dando una mejor apariencia al maquillaje"
-    },
-    {
-      "id": "FACE-05",
+      "price": 36000.0,
+      "stock": 200,
+      "description": "Su fórmula concentrada con Bayas de Goji y Haloxyl trata y reafirma bolsas y ojeras con el uso continuo, dando una mejor apariencia al maquillaje",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 15,
+      "idCategory": 2,
       "name": "ILUMINADOR KHOL",
-      "img": "assets/images/FACE-05.jpg",
-      "price": 32000,
-      "description": "El iluminador otorga un aspecto bronceado en la piel, aporta luminosidad y puede ser utilizado para lograr contornos perfectos en determinadas zonas del cuerpo"
-    },
-    {
-      "id": "FACE-06",
+      "price": 32000.0,
+      "stock": 350,
+      "description": "El iluminador otorga un aspecto bronceado en la piel, aporta luminosidad y puede ser utilizado para lograr contornos perfectos en determinadas zonas del cuerpo",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 16,
+      "idCategory": 2,
       "name": "POLVO COMPACTO SELFIE",
-      "img": "assets/images/FACE-06.jpg",
-      "price": 12000,
-      "description": "El polvo selfie By ruby rose ofrece una cobertura uniforme que disimula pequeñas imperfecciones y ayuda a mejorar  el maquillaje"
-    },
-    {
-      "id": "FACE-07",
+      "price": 12000.0,
+      "stock": 100,
+      "description": "El polvo selfie By ruby rose ofrece una cobertura uniforme que disimula pequeñas imperfecciones y ayuda a mejorar  el maquillaje",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 17,
+      "idCategory": 2,
       "name": "POLVO TRANSLUCIDO FEELS",
-      "img": "assets/images/FACE-07.jpg",
-      "price": 16000,
-      "description": "El polvo translucido tiene un acabado matte, una textura ultrafina y ligera que disimula pequeñas imperfecciones, dejando la piel seca y libre de grasa."
-    },
-    {
-      "id": "FACE-08",
+      "price": 16000.0,
+      "stock": 300,
+      "description": "El polvo translucido tiene un acabado matte, una textura ultrafina y ligera que disimula pequeñas imperfecciones, dejando la piel seca y libre de grasa",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 18,
+      "idCategory": 2,
       "name": "FIJADOR DE MAQUILLAJE SETTING SPRAY",
-      "img": "assets/images/FACE-08.jpg",
-      "price": 28000,
-      "description": "El spray fijador con aromas By Beauty creations, te brindara una máxima hidratación con un efecto rápido para ayudar a mantener el maquillaje en su lugar"
-    },
-    {
-      "id": "FACE-09",
-      "name": "PRIME & CHILL BEAUTY OI",
-      "img": "assets/images/FACE-09.jpg",
-      "price": 15000,
-      "description": "Este Espectacular Prime & Chill Beauty Oil , está compuesto de aceite de almendra, jojoba y girasol perfecto para preparar e hidratar la piel, dejándola sedosa y cuidada al mismo tiempo , ideal para usar como primer antes del maquillaje para tener un rostro húmedo y con textura suave o mezclándolo con base liquida para obtener resultados fabulosos en tu maquillaje con acabado natural."
-    },
-    {
-      "id": "FACE-10",
+      "price": 28000.0,
+      "stock": 400,
+      "description": "El spray fijador con aromas By Beauty creations, te brindara una máxima hidratación con un efecto rápido para ayudar a mantener el maquillaje en su lugar",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 19,
+      "idCategory": 2,
+      "name": "PRIME & CHILL BEAUTY OIL",
+      "price": 15000.0,
+      "stock": 350,
+      "description": "Este Espectacular Prime & Chill Beauty Oil , está compuesto de aceite de almendra, jojoba y girasol perfecto para preparar e hidratar la piel, dejándola sedosa y cuidada al mismo tiempo , ideal para usar como primer antes del maquillaje para tener un rostro húmedo y con textura suave o mezclándolo con base liquida para obtener resultados fabulosos en tu maquillaje con acabado natural",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  },
+  {
+      "id": 20,
+      "idCategory": 2,
       "name": "PALETA CHEEK GLOW STUDIO",
-      "img": "assets/images/FACE-10.jpg",
-      "price": 22000,
-      "description": "La paleta cheek glow studio esta diseñada especialmente para los amantes al maquillaje."
-    }
-  ]
+      "price": 22000.0,
+      "stock": 250,
+      "description": "La paleta cheek glow studio esta diseñada especialmente para los amantes al maquillaje",
+      "imgUrl": null,
+      "category": {
+          "id": 2,
+          "description": "face"
+      },
+      "status": "ACTIVO"
+  }
+]

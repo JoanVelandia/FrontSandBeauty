@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -35,6 +36,7 @@ export class ProductsService {
   }
 
   saveProducts(item: Product): Observable<Product>{
+    console.log("llegué al services")
     return this.request.post<Product>('/SandBeauty/api/products/save', item);
   }
 
