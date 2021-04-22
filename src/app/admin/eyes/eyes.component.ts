@@ -51,7 +51,10 @@ export class EyesComponent implements OnInit {
   }
 
   deleteProductEye(item: Product): void {
-   // this.productService.delete(item)
+
+    this.productService.delete(item).subscribe(item =>{
+
+    });
   }
 
   update(item: Product): void

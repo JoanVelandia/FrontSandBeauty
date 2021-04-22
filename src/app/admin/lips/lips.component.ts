@@ -31,7 +31,7 @@ export class LipsComponent implements OnInit {
 
   loadProducts(): void
   {
-    this.productService.getFaceProducts().subscribe( lipsProducts => {
+    this.productService.getLipsProducts().subscribe( lipsProducts => {
       console.log("REST API\n");
       console.log(lipsProducts);
       console.log("LocalStorage\n");
@@ -53,7 +53,9 @@ export class LipsComponent implements OnInit {
 
   deleteProductLip(item: Product): void {
 
-    this.localStorage.deleteProductLips(item);
+    this.productService.delete(item).subscribe(item =>{
+
+    });
   }
 
   update(item: Product): void

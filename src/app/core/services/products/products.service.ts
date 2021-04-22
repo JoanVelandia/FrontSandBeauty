@@ -36,8 +36,14 @@ export class ProductsService {
   }
 
   saveProducts(item: Product): Observable<Product>{
-    console.log("llegué al services")
+
     return this.request.post<Product>('/SandBeauty/api/products/save', item);
+  }
+
+  delete(item: Product): Observable<Product> {
+    const URI = '/SandBeauty/api/products/delete/' + String(item.id);
+    return this.request.delete<Product>(URI);
+
   }
 
 //  delete(item: Product): Observable<Product[]>{

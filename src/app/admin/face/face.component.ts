@@ -49,7 +49,9 @@ export class FaceComponent implements OnInit {
   }
 
   deleteProductFace(item: Product): void{
-    this.localStorage.deleteProductFace(item);
+    this.productService.delete(item).subscribe(item =>{
+
+    });
   }
 
   update(item: Product): void

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
 import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
 import { ProductsService } from 'src/app/core/services/products/products.service';
@@ -78,33 +78,17 @@ export class AddComponent implements OnInit {
 
     const item = new Product(0,idCategory, imgURL,name, price, stock, description, status);
     console.log(item.id)
-    this.productService.saveProducts(item).subscribe(Product => console.log(Product))
+    this.productService.saveProducts(item).subscribe(Product => console.log(Product));
+    alert('Producto añadido');
+    const urlTree = this.router.parseUrl(this.router.url);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path + '/eyes';
+    this.navigateEye('admin/' + adm);
+  }
 
-   /* let amoutProducts: number;
-    if (this.localStorage.getItem('amoutProducts') !== null) {
-      amoutProducts = this.localStorage.getItem('amoutProducts') as number;
-    } else {
-      amoutProducts = 0;
-    }
-
-    if (categ === 'EYE'){
-      const newId: string = 'EYE-' + String(this.ProductosEyes.length);
-      this.Product = new Product(newId, idCategory, img, name, price, stock, description, true);
-      this.localStorage.setItem('new' + amoutProducts, this.Product);
-
-    }
-    if (categ === 'FACE'){
-      const newId: string = 'FACE-' + String(this.ProductosEyes.length);
-      this.Product = new Product(newId,idCategory, img, name, price, stock, description, true);
-      this.localStorage.setItem('new' + amoutProducts, this.Product);
-
-    }
-    if (categ === 'LIP'){
-      const newId: string = 'LIP-' + String(this.ProductosEyes.length);
-      this.Product = new Product(newId,idCategory, img, name, price,  stock, description, true);
-      this.localStorage.setItem('new' + amoutProducts, this.Product);
-    }*/
-
+  discard(): void {
+    const urlTree = this.router.parseUrl(this.router.url);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path + '/eyes';
+    this.navigateEye('admin/' + adm);
   }
 
 }
