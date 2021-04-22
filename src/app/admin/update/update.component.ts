@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
 import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
 import { ProductsService } from 'src/app/core/services/products/products.service';
@@ -59,4 +59,16 @@ export class UpdateComponent implements OnInit {
     const productBefore: Product = this.productService.get(idPrev);
     return productBefore;
   }
+
+  discard(): void {
+    const urlTree = this.route2.parseUrl(this.route2.url);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path + '/eyes';
+    this.navigate('admin/' + adm);
+  }
+
+  navigate(uri: string): void {
+    const rou = '/' + uri;
+    this.route2.navigate([rou]);
+  }
+
 }
