@@ -72,7 +72,7 @@ export class AddComponent implements OnInit {
     const imgURL  = this.form.value.img;
     const idCategory  = this.form.value.categoria;
     const stock  = this.form.value.stock;
-    const status = this.form.value.status;
+    const status = 'ACTIVO';
     console.log("medio funciona")
     console.log(stock)
 

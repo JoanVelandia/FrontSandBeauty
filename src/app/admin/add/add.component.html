@@ -22,10 +22,10 @@
     </mat-form-field>
   </div>
     <div class="emailInput">
-      <h4 style="color:#fd7f87">Ingrese la categoria del producto, 1 para Ojos, 2 para Rostro y 3 para labios</h4>
+      <h4 style="color:#fd7f87">Ingrese la categoria del producto: 1 para Ojos, 2 para Rostro y 3 para labios</h4>
       <mat-form-field class="full-width" appearance="outline">
       <mat-label style="color: #fd7f87">Categoria</mat-label>
-        <input formControlName="categoria" matInput placeholder="Ingrese la categoria: 1 para ojos| 2 para rostro| 3 para labios " required />
+        <input formControlName="categoria" matInput placeholder="Ingrese la categoria: 1 para ojos, 2 para rostro, 3 para labios " required />
       </mat-form-field>
     </div>
     <div class="emailInput">
@@ -35,11 +35,10 @@
       </mat-form-field>
     </div>
     <div class="emailInput">
-      <h4 style="color:#fd7f87">Ingrese el estado: ACTIVO O DESACTIVO</h4>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label style="color: #fd7f87">Estado</mat-label>
-          <input formControlName="status" matInput placeholder="Ingrese el estado: ACTIVO | DESACTIVO " required />
-        </mat-form-field>
+      <mat-label style="color: #fd7f87">URL Imagen</mat-label>
+              <input formControlName="imgUrl" matInput placeholder="Ingrese el URL de la imagen(imgbb) " required />
+      </mat-form-field>
     </div>
   <button mat-flat-button style="background-color: #fd7f87; color:#fff">Guardar</button>
 </form>

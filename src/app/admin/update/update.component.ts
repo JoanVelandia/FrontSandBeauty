@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
 import { ProductsService } from 'src/app/core/services/products/products.service';
@@ -47,18 +48,19 @@ export class UpdateComponent implements OnInit {
     /***********************************************************************/
 
     const idPrev = this.route.snapshot.paramMap.get('product') as string;
-    const prevProduct: Product = this.getPrev(idPrev) as Product;
-    newProduct = new Product(parseInt(idPrev, 10) , idCategory, prevProduct.imgUrl, name, price, stock, desc, "ACTIVO");
+    let prevProduct: Product;
+    this.productService.get( idPrev ).subscribe( pro => {
+      prevProduct = pro;
+      this.productService.delete(pro).subscribe( () => {});
+      this.productService.saveProducts(new Product(0 , idCategory, prevProduct.imgUrl, name, price, stock, desc, 'ACTIVO')).subscribe(() => {});
+    });
 
     this.currentUser = this.localStorageService.getItem('CURRENT_USER') as User;
-    this.productService.change(prevProduct, newProduct);
+    //this.productService.change(prevProduct, newProduct);
 
     this.route2.navigate(['/admin/' + this.currentUser.nickName + '/eyes']);
   }
-  getPrev(idPrev: string): Product {
-    const productBefore: Product = this.productService.get(idPrev);
-    return productBefore;
-  }
+
 
   discard(): void {
     const urlTree = this.route2.parseUrl(this.route2.url);

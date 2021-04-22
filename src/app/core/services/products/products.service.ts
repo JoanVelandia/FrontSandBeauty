@@ -46,20 +46,10 @@ export class ProductsService {
 
   }
 
-//  delete(item: Product): Observable<Product[]>{
-//    const route = '/SandBeauty/api/products/delete/'+item.id;
 
-
-  get(idBefore: string): Product {
-    let produc: Product;
-    if (idBefore.includes('EYE')) {
-      produc = this.getEye(idBefore);
-    } else if (idBefore.includes('LIPS')) {
-      produc = this.getLip(idBefore);
-    } else {
-      produc = this.getFace(idBefore);
-    }
-    return produc;
+  get(idBefore: string):  Observable<Product> {
+    const URI = '/SandBeauty/api/products/' + idBefore;
+    return this.request.get<Product>(URI);
   }
 
   getLip(idBefore: string): Product {
