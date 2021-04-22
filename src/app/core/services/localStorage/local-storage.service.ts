@@ -29,7 +29,7 @@ export class LocalStorageService {
   getEyesProducts(): Product[] {
     console.log('there are ' + this.eyesProducts.length + ' eyes products');
     if (this.eyesProducts.length === 0) {
-      this.eyesProducts = dataEyes as Product[];
+      //this.eyesProducts = dataEyes as Product[];
     }
     console.log('there are ' + this.eyesProducts.length + ' eyes products');
     return this.eyesProducts;
@@ -38,7 +38,7 @@ export class LocalStorageService {
   getLipsProducts(): Product[] {
     console.log('there are ' + this.lipsProducts.length + ' lips products');
     if (this.lipsProducts.length === 0) {
-      this.lipsProducts = dataLips as Product[];
+      //this.lipsProducts = dataLips as Product[];
     }
     return this.lipsProducts;
   }
@@ -46,7 +46,7 @@ export class LocalStorageService {
   getFaceProducts(): Product[] {
     console.log('there are ' + this.faceProducts.length + ' face products');
     if (this.faceProducts.length === 0) {
-      this.faceProducts = dataFace as Product[];
+      //this.faceProducts = dataFace as Product[];
     }
     return this.faceProducts;
   }
