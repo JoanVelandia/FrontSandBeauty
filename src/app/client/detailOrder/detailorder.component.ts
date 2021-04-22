@@ -35,7 +35,7 @@ export class DetailorderComponent implements OnInit {
     for (let i = 0; i < this.orders.length; i++) {
       if (i === Number(productID) )
       {
-        this.productsOrder = this.orders[i].products;
+        //this.productsOrder = this.orders[i].products;
         break;
       }
     }

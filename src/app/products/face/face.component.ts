@@ -50,13 +50,13 @@ export class FaceComponent implements OnInit {
     }
     products.push(product);
     const date = new Date().toDateString();
-    const newOrder: Order = new Order(
-      buyer.nickName,
-      date,
-      products,
-      product.price
-    );
-    this.localStorage.setItem('order' + amoutOrders, newOrder);
+    //const newOrder: Order = new Order(
+      //buyer.nickName,
+      //date,
+      //products,
+      //product.price
+    //);
+    //this.localStorage.setItem('order' + amoutOrders, newOrder);
     amoutOrders = Number(amoutOrders) + Number(1);
     this.localStorage.setItem('amoutOrders', String(amoutOrders));
   }

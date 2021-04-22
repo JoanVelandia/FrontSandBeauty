@@ -1,0 +1,67 @@
+<div>
+  <div class="box">
+    <div class="box-header with-border">
+      <div class="d-flex justify-content-beetwen">
+        <h3 class="box-title">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Productos vendidos</font>
+          </font>
+        </h3>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th style="width: 10px">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Identificación del producto</font>
+              </font>
+            </th>
+            <th>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Cantidad comprada</font>
+              </font>
+            </th>
+            <th>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Precio de compra</font>
+              </font>
+            </th>
+            <th>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Total</font>
+              </font>
+            </th>
+          </tr>
+          <tr *ngFor="let item of order.products; index as i">
+            <td>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">{{item.productId}}</font>
+              </font>
+            </td>
+            <td>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">{{item.quantity}}</font>
+              </font>
+            </td>
+            <td>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">{{item.price}}</font>
+              </font>
+            </td>
+            <td>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">{{item.total | currency}}</font>
+              </font>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="btn-group">
+    <button type="button" style="background-color: #fd7f87; color:#fff" class="btn btn-flat" (click)="back()"> Regresar</button>
+  </div>
+</div>

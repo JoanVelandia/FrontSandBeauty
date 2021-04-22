@@ -46,8 +46,8 @@ export class CartComponent implements OnInit {
     }
     const date = new Date().toDateString();
     const total = this.total();
-    const newOrder: Order = new Order(buyer.nickName, date, this.cart, total);
-    this.localStorageService.setItem('order' + amoutOrders, newOrder);
+    //const newOrder: Order = new Order(buyer.nickName, date, this.cart, total);
+    //this.localStorageService.setItem('order' + amoutOrders, newOrder);
     amoutOrders = Number(amoutOrders) + Number(1);
     this.localStorageService.setItem('amoutOrders', String(amoutOrders));
     this.cancelBuy();

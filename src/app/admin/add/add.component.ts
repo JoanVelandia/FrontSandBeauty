@@ -46,7 +46,7 @@ export class AddComponent implements OnInit {
     description: [''],
     stock: [''],
     status: [''],
-    img: [''],
+    imgForm: [''],
     categoria: ['']
     })
   }

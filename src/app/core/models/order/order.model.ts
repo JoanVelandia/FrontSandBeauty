@@ -1,10 +1,20 @@
 import { Product } from '../product/product.model';
 
+interface purchases{
+  productId: number,
+  quantity: number,
+  price: number,
+  total: number
+}
+
 export class Order {
   constructor(
-    public buyer: string,
+    public purchaseId: number,
+    public clientId: number,
     public date: string,
-    public products: Product[],
-    public total: number
+    public cash: boolean,
+    public delivered: boolean,
+    public products: purchases[],
+
   ){}
 }

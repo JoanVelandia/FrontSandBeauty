@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { DetailsReportComponent } from './details-report/details-report.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { MatOptionModule } from '@angular/material/core';
     LipsComponent,
     AddComponent,
     UpdateComponent,
+    DetailsReportComponent,
     ],
   imports: [
     CommonModule,

@@ -7,6 +7,7 @@ import { EyesComponent } from './eyes/eyes.component';
 import { FaceComponent } from './face/face.component';
 import { UpdateComponent } from './update/update.component';
 import { AddComponent } from './add/add.component';
+import { DetailsReportComponent} from './details-report/details-report.component'
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'add',
         component: AddComponent
+      },
+      {
+        path: 'reports/:id',
+        component: DetailsReportComponent
       }
     ]
   }

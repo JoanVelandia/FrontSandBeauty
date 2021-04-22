@@ -23,6 +23,11 @@ export class ProductsService {
 
   ) {}
 
+  getProductById(id: number): Observable<Product>{
+    const URI = '/SandBeauty/api/products/' + String(id);
+    return this.request.get<Product>(URI);
+  }
+
   getLipsProducts(): Observable<Product[]> {
 
     return this.request.get<Product[]>('/SandBeauty/api/products/category/3');
