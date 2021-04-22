@@ -66,7 +66,6 @@ export class AddComponent implements OnInit {
 
   add(): void {
     this.submitted = true;
-    const id  = this.form.value.id;
     const name  = this.form.value.name;
     const description  = this.form.value.description;
     const price  = this.form.value.price;
@@ -77,7 +76,7 @@ export class AddComponent implements OnInit {
     console.log("medio funciona")
     console.log(stock)
 
-    const item = new Product(id,idCategory, imgURL,name, price, stock, description, status);
+    const item = new Product(0,idCategory, imgURL,name, price, stock, description, status);
     console.log(item.id)
     this.productService.saveProducts(item).subscribe(Product => console.log(Product))
 
