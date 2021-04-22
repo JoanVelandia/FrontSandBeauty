@@ -69,7 +69,7 @@ export class AddComponent implements OnInit {
     const name  = this.form.value.name;
     const description  = this.form.value.description;
     const price  = this.form.value.price;
-    const imgURL  = this.form.value.img;
+    const imgURL  = this.form.value.imgForm;
     const idCategory  = this.form.value.categoria;
     const stock  = this.form.value.stock;
     const status = 'ACTIVO';

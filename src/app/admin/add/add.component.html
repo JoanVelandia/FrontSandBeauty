@@ -1,8 +1,10 @@
 
+<mat-card>
+<mat-card-content>
 <div class="header">
-  <h3 style="color: #fd7f87; font: blond">Editar Producto</h3>
+  <h2 style="color: #fd7f87; font: blond">Agregar Producto</h2>
 </div>
-<form (submit)="add()" name="form" [formGroup]="form" style="align-items: center;">
+<form (submit)="add()" name="loginForm" [formGroup]="form">
     <div class="emailInput">
     <mat-form-field class="full-width" appearance="outline">
     <mat-label style="color: #fd7f87">Nombre</mat-label>
@@ -21,25 +23,32 @@
       <input formControlName="price" matInput placeholder="Ingrese el precio" required />
     </mat-form-field>
   </div>
+  <div class="emailInput">
+    <mat-form-field class="full-width" appearance="outline">
+    <mat-label style="color: #fd7f87">Stock</mat-label>
+      <input formControlName="stock" matInput placeholder="Ingrese el stock " required />
+    </mat-form-field>
+  </div>
+  <div class="emailInput">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label style="color: #fd7f87">Imagen</mat-label>
+      <input formControlName="imgForm" matInput placeholder="Ingrese el URL de la nueva imagen" required />
+    </mat-form-field>
+  </div>
     <div class="emailInput">
-      <h4 style="color:#fd7f87">Ingrese la categoria del producto: 1 para Ojos, 2 para Rostro y 3 para labios</h4>
       <mat-form-field class="full-width" appearance="outline">
-      <mat-label style="color: #fd7f87">Categoria</mat-label>
-        <input formControlName="categoria" matInput placeholder="Ingrese la categoria: 1 para ojos, 2 para rostro, 3 para labios " required />
+        <mat-label style="color: #fd7f87">Categoria</mat-label>
+        <mat-select formControlName="categoria" required>
+          <mat-option value=1>Ojos</mat-option>
+          <mat-option value=3>Labios</mat-option>
+          <mat-option value=2>Rostro</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
-    <div class="emailInput">
-      <mat-form-field class="full-width" appearance="outline">
-      <mat-label style="color: #fd7f87">Stock</mat-label>
-              <input formControlName="stock" matInput placeholder="Ingrese el stock " required />
-      </mat-form-field>
-    </div>
-    <div class="emailInput">
-      <mat-form-field class="full-width" appearance="outline">
-      <mat-label style="color: #fd7f87">URL Imagen</mat-label>
-              <input formControlName="imgUrl" matInput placeholder="Ingrese el URL de la imagen(imgbb) " required />
-      </mat-form-field>
-    </div>
+
   <button mat-flat-button style="background-color: #fd7f87; color:#fff">Guardar</button>
 </form>
+<br>
 <button mat-flat-button style="background-color: #a01c25; color:#fff"(click)="discard()">Descartar</button>
+</mat-card-content>
+</mat-card>

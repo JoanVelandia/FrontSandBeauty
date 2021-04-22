@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-content>
     <div class="header">
-      <h3 style="color: #fd7f87; font: blond">Editar Producto</h3>
+      <h2 style="color: #fd7f87; font: blond">Editar Producto</h2>
     </div>
     <form (ngSubmit)="update()" name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
@@ -19,8 +19,8 @@
       </div>
       <div class="emailInput">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label style="color: #fd7f87">Imágen</mat-label>
-          <input formControlName="imgForm" matInput placeholder="Ingrese el URL de la nueva imágen" required />
+          <mat-label style="color: #fd7f87">Imagen</mat-label>
+          <input formControlName="imgForm" matInput placeholder="Ingrese el URL de la nueva imagen" required />
         </mat-form-field>
       </div>
       <div class="emailInput">
@@ -47,6 +47,9 @@
       </div>
       <button mat-flat-button style="background-color: #fd7f87; color:#fff">Guardar</button>
     </form>
+    <div>
+      <br>
     <button mat-flat-button style="background-color: #a01c25; color:#fff" (click)="discard()">Descartar</button>
+  </div>
   </mat-card-content>
 </mat-card>
