@@ -19,8 +19,30 @@
       </div>
       <div class="emailInput">
         <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Imágen</mat-label>
+          <input formControlName="imgForm" matInput placeholder="Ingrese el URL de la nueva imágen" required />
+        </mat-form-field>
+      </div>
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
           <mat-label style="color: #fd7f87">Precio</mat-label>
           <input type="number" formControlName="price" matInput placeholder="Ingrese el nuevo precio" required />
+        </mat-form-field>
+      </div>
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Stock</mat-label>
+          <input type="number" formControlName="stock" matInput placeholder="Ingrese el nuevo stock" required />
+        </mat-form-field>
+      </div>
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label style="color: #fd7f87">Categoria</mat-label>
+          <mat-select formControlName="cate" required>
+            <mat-option value=1>Ojos</mat-option>
+            <mat-option value=3>Labios</mat-option>
+            <mat-option value=2>Rostro</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <button mat-flat-button style="background-color: #fd7f87; color:#fff">Guardar</button>
