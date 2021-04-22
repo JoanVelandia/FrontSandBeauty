@@ -4,7 +4,7 @@
       <span class="info-box-icon" style="width: 121px; height: 131px;">
         <i class="widget-user-image">
           <img style="width: 100px; border-radius: 50%; height: -webkit-fill-available;" class="img-circle"
-            [src]="product.img" alt="User Avatar">
+            [src]="product.imgUrl" alt="User Avatar">
         </i>
       </span>
       <div class="info-box-content" style="margin-left: 122px;">
@@ -26,7 +26,7 @@
       <button type="button" class="btn btn-block btn-success btn-lg" (click)="buy(cart)">Finalizar Compra</button>
     </div>
     <div class="col-md-3 col-sm-6 col-xs-12">
-      <button type="button" class="btn btn-block btn-danger btn-lg"(click)="cancelBuy()">Cancelar Compra</button>
+      <button type="button" class="btn btn-block btn-danger btn-lg" (click)="cancelBuy()">Cancelar Compra</button>
     </div>
   </div>
 </div>

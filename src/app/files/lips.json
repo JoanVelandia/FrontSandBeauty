@@ -1,156 +1,112 @@
 [
   {
-      "id": 21,
-      "idCategory": 3,
-      "name": "BALSAMO PARA LABIOS COCONUT LIP MASK",
-      "price": 15000.0,
-      "stock": 300,
-      "description": "El Bálsamo de labios de coco proporciona una hidratación intensa para nutrir los labios durante todo el día o durante la noche. El coco contiene emolientes que acondicionan la piel para suavizarla,e hidratarla. Con una infusión de vitamina E para labios suaves y hidratados",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 21,
+    "idCategory": 3,
+    "name": "BALSAMO PARA LABIOS COCONUT LIP MASK",
+    "price": 15000.0,
+    "stock": 300,
+    "description": "El Bálsamo de labios de coco proporciona una hidratación intensa para nutrir los labios durante todo el día o durante la noche. El coco contiene emolientes que acondicionan la piel para suavizarla,e hidratarla. Con una infusión de vitamina E para labios suaves y hidratados",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 22,
-      "idCategory": 3,
-      "name": "BRILLO DUO CHORMATIC LIP GLOSS",
-      "price": 25000.0,
-      "stock": 200,
-      "description": "¿Quieres unos labios absolutamente fascinantes? Entonces, el look cromado de Duo Chromatic Lip Gloss y sus nácares radiantes es lo que estabas buscando. Este gloss aporta un brillo impresionante, un toque de color y un acabado en 3D intenso. Sus tonos ligeros se deslizan sobre los labios con delicadeza sin dejar una sensación pegajosa. Llévalos solos o encima de un labial para un efecto inolvidable",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 22,
+    "idCategory": 3,
+    "name": "BRILLO DUO CHORMATIC LIP GLOSS",
+    "price": 25000.0,
+    "stock": 200,
+    "description": "¿Quieres unos labios absolutamente fascinantes? Entonces, el look cromado de Duo Chromatic Lip Gloss y sus nácares radiantes es lo que estabas buscando. Este gloss aporta un brillo impresionante, un toque de color y un acabado en 3D intenso. Sus tonos ligeros se deslizan sobre los labios con delicadeza sin dejar una sensación pegajosa. Llévalos solos o encima de un labial para un efecto inolvidable",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 23,
-      "idCategory": 3,
-      "name": "BRILLO LIP OIL GLOSS",
-      "price": 7000.0,
-      "stock": 350,
-      "description": "El brillo labial hidratante le da un brillo incoloro a los labios, su textura no es pegajosa y es muy cómoda.",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 23,
+    "idCategory": 3,
+    "name": "BRILLO LIP OIL GLOSS",
+    "price": 7000.0,
+    "stock": 350,
+    "description": "El brillo labial hidratante le da un brillo incoloro a los labios, su textura no es pegajosa y es muy cómoda.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 24,
-      "idCategory": 3,
-      "name": "BRILLO LIPGLOSS MAGIC YOUR LIFE",
-      "price": 6000.0,
-      "stock": 350,
-      "description": "Brillo destellos magic, Ideal para darle un color rosado a tus labios, se activa el color con el calor de tus labios, humecta tus labios, da brillo y color instantáneo",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 24,
+    "idCategory": 3,
+    "name": "BRILLO LIPGLOSS MAGIC YOUR LIFE",
+    "price": 6000.0,
+    "stock": 350,
+    "description": "Brillo destellos magic, Ideal para darle un color rosado a tus labios, se activa el color con el calor de tus labios, humecta tus labios, da brillo y color instantáneo",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 25,
-      "idCategory": 3,
-      "name": "EXFOLIANTE PARA LABIOS CARE LIPS SCRUB FUN",
-      "price": 7000.0,
-      "stock": 100,
-      "description": "Exfoliante labial en barra, Aromas distintos, contiene aceites hidratantes y nutritivos, Libre de crueldad animal",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 25,
+    "idCategory": 3,
+    "name": "EXFOLIANTE PARA LABIOS CARE LIPS SCRUB FUN",
+    "price": 7000.0,
+    "stock": 100,
+    "description": "Exfoliante labial en barra, Aromas distintos, contiene aceites hidratantes y nutritivos, Libre de crueldad animal",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 26,
-      "idCategory": 3,
-      "name": "EXFOLIANTE PARA LABIOS SUGAR KISS",
-      "price": 10000.0,
-      "stock": 250,
-      "description": "Exfóliate los labios con Sugar Kiss, es una fórmula de azúcar real fusionada con aceite de frutas y manteca de Karité para dejar a un lado esos labios secos y escamosos, disponibles en 3 sabores diferentes, vainilla, fresa o café. Dejaran los labios suaves y preparados para aplicar el labial o también para hidratar y limpiar luego de haber usado el labial",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 26,
+    "idCategory": 3,
+    "name": "EXFOLIANTE PARA LABIOS SUGAR KISS",
+    "price": 10000.0,
+    "stock": 250,
+    "description": "Exfóliate los labios con Sugar Kiss, es una fórmula de azúcar real fusionada con aceite de frutas y manteca de Karité para dejar a un lado esos labios secos y escamosos, disponibles en 3 sabores diferentes, vainilla, fresa o café. Dejaran los labios suaves y preparados para aplicar el labial o también para hidratar y limpiar luego de haber usado el labial",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 27,
-      "idCategory": 3,
-      "name": "BRILLO DE LABIOS CRYSTAL LIP GLAZE",
-      "price": 10000.0,
-      "stock": 200,
-      "description": "Brillo labial aromatizado con aloe vera hidratante y vitamina E",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 27,
+    "idCategory": 3,
+    "name": "BRILLO DE LABIOS CRYSTAL LIP GLAZE",
+    "price": 10000.0,
+    "stock": 200,
+    "description": "Brillo labial aromatizado con aloe vera hidratante y vitamina E",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 28,
-      "idCategory": 3,
-      "name": "VOLUMINIZADOR DE LABIOS",
-      "price": 12000.0,
-      "stock": 350,
-      "description": "Este producto ayuda a mejorar la apariencia de los labios generando color y volumen",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 28,
+    "idCategory": 3,
+    "name": "VOLUMINIZADOR DE LABIOS",
+    "price": 12000.0,
+    "stock": 350,
+    "description": "Este producto ayuda a mejorar la apariencia de los labios generando color y volumen",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 29,
-      "idCategory": 3,
-      "name": "LIP MASK DE PROPOLEO",
-      "price": 15000.0,
-      "stock": 400,
-      "description": "El producto lip mask de propoleo contiene ricos factores hidratantes, que pueden penetrar rápidamente en los labios, proporcionando suficiente nutrición y humedad, teniendo como resultado unos labios hidratados y suaves",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 29,
+    "idCategory": 3,
+    "name": "LIP MASK DE PROPOLEO",
+    "price": 15000.0,
+    "stock": 400,
+    "description": "El producto lip mask de propoleo contiene ricos factores hidratantes, que pueden penetrar rápidamente en los labios, proporcionando suficiente nutrición y humedad, teniendo como resultado unos labios hidratados y suaves",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 30,
-      "idCategory": 3,
-      "name": "LABIAL SOFT MATTE",
-      "price": 20000.0,
-      "stock": 300,
-      "description": "Probablemente uno de los labiales más famosos. Son cremosos, matte y con un acabado sedoso y suave que te aportarán una explosión de color vaya a donde vayas.",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
-  },
-  {
-      "id": 31,
-      "idCategory": 3,
-      "name": "LABIAL SOFT MATTE",
-      "price": 20000.0,
-      "stock": 300,
-      "description": "Probablemente uno de los labiales más famosos. Son cremosos, matte y con un acabado sedoso y suave que te aportarán una explosión de color vaya a donde vayas.",
-      "imgUrl": null,
-      "category": {
-          "id": 3,
-          "description": "lips"
-      },
-      "status": "ACTIVO"
+    "id": 30,
+    "idCategory": 3,
+    "name": "LABIAL SOFT MATTE",
+    "price": 20000.0,
+    "stock": 300,
+    "description": "Probablemente uno de los labiales más famosos. Son cremosos, matte y con un acabado sedoso y suave que te aportarán una explosión de color vaya a donde vayas.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   }
 ]

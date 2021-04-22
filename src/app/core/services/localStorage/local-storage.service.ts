@@ -53,7 +53,7 @@ export class LocalStorageService {
 
   getOrders(): Order[] {
     if (this.orders.length === 0) {
-      this.orders = dataOrders as Order[];
+      //this.orders = dataOrders as Order[];
     }
     return this.orders;
   }

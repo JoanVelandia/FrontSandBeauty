@@ -61,7 +61,7 @@ export class ProductsService {
     this.LipsProducts = this.localStrorageService.getLipsProducts();
 
     for (const elem of this.LipsProducts) {
-      if (elem.id === idBefore) {
+      if (elem.id === parseInt(idBefore, 10)  ) {
         produc = elem;
         break;
       }
@@ -70,9 +70,10 @@ export class ProductsService {
   }
   getFace(idBefore: string): Product {
     let produc!: Product;
+
     this.FaceProducts = this.localStrorageService.getFaceProducts();
     for (const elem of this.FaceProducts) {
-      if (elem.id === idBefore) {
+      if (elem.id === parseInt(idBefore, 10) ) {
         produc = elem;
         break;
       }
@@ -84,7 +85,7 @@ export class ProductsService {
     let produc!: Product;
     this.EyesProducts = this.localStrorageService.getEyesProducts();
     for (const elem of this.EyesProducts) {
-      if (elem.id === idBefore) {
+      if (elem.id === parseInt(idBefore, 10) ) {
         produc = elem;
         break;
       }
@@ -93,9 +94,9 @@ export class ProductsService {
   }
 
   change(prevProduct: Product, newProduct: Product): void {
-    if (prevProduct.id.includes('EYE')) {
+    if (prevProduct.id === 1) {
       this.changeEye(prevProduct, newProduct);
-    } else if (prevProduct.id.includes('LIPS')) {
+    } else if (prevProduct.id === 3) {
       this.changeLip(prevProduct, newProduct);
     } else {
       this.changeFace(prevProduct, newProduct);

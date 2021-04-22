@@ -1,142 +1,112 @@
 [
   {
-      "id": 1,
-      "idCategory": 1,
-      "name": "DELINEADOR TATTO EYELINER",
-      "price": 14000.0,
-      "stock": 300,
-      "description": "El delineador liquido tatto eyeliner está diseñado para realizar trazos de cualquier tamaño de forma fácil y rápida gracias a su punta fina, ofrece alta pigmentación y larga duración.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 1,
+    "idCategory": 1,
+    "name": "DELINEADOR TATTO EYELINER",
+    "price": 14000.0,
+    "stock": 300,
+    "description": "El delineador liquido tatto eyeliner está diseñado para realizar trazos de cualquier tamaño de forma fácil y rápida gracias a su punta fina, ofrece alta pigmentación y larga duración.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 2,
-      "idCategory": 1,
-      "name": "SOMBRA ORANGE POP\"",
-      "price": 14000.0,
-      "stock": 300,
-      "description": "La sombra ORANGE POP By Kara beauty  es una combinación perfecta para recrear tus mejores looks de día o noche en tonos tierras y cálidos.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 2,
+    "idCategory": 1,
+    "name": "SOMBRA ORANGE POP\"",
+    "price": 14000.0,
+    "stock": 300,
+    "description": "La sombra ORANGE POP By Kara beauty  es una combinación perfecta para recrear tus mejores looks de día o noche en tonos tierras y cálidos.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 3,
-      "idCategory": 1,
-      "name": "SOMBRA PEACH",
-      "price": 48000.0,
-      "stock": 100,
-      "description": "La paleta de sombras Peach By  Beauty glazed ofrece los  tonos rosas que actualmente son tendencia en el mundo del maquillaje.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 3,
+    "idCategory": 1,
+    "name": "SOMBRA PEACH",
+    "price": 48000.0,
+    "stock": 100,
+    "description": "La paleta de sombras Peach By  Beauty glazed ofrece los  tonos rosas que actualmente son tendencia en el mundo del maquillaje.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 4,
-      "idCategory": 1,
-      "name": "DPESTAÑINA EFECTO TOTAL 6",
-      "price": 25000.0,
-      "stock": 200,
-      "description": "Pestañina que permite lograr unas pestañas largas, abundantes, resistentes, definidas, curvas y fuertes, con cera del arbol de la vida.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 4,
+    "idCategory": 1,
+    "name": "DPESTAÑINA EFECTO TOTAL 6",
+    "price": 25000.0,
+    "stock": 200,
+    "description": "Pestañina que permite lograr unas pestañas largas, abundantes, resistentes, definidas, curvas y fuertes, con cera del arbol de la vida.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 5,
-      "idCategory": 1,
-      "name": "PESTAÑINA THE COLOSSAL VOLUM EXPRESS",
-      "price": 15000.0,
-      "stock": 350,
-      "description": "Contiene colágeno y el Mega Brush alcanza instantáneamente 9 veces el volumen.Su mega cepillo, el doble que un cepillo normal, rápido y fácil de usar, consigue en una sola pasada un volumen extremo al instante, sin grumos, para unas pestañas más voluminosas, más gruesas, impactantes.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 5,
+    "idCategory": 1,
+    "name": "PESTAÑINA THE COLOSSAL VOLUM EXPRESS",
+    "price": 15000.0,
+    "stock": 350,
+    "description": "Contiene colágeno y el Mega Brush alcanza instantáneamente 9 veces el volumen.Su mega cepillo, el doble que un cepillo normal, rápido y fácil de usar, consigue en una sola pasada un volumen extremo al instante, sin grumos, para unas pestañas más voluminosas, más gruesas, impactantes.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 6,
-      "idCategory": 1,
-      "name": "LAPIZ PARA CEJAS DOBLE PUNTA",
-      "price": 28000.0,
-      "stock": 300,
-      "description": "El lapíz para cejas doble punta By beauty glazed es ideal para contornear y rellenar tus cejas.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 6,
+    "idCategory": 1,
+    "name": "LAPIZ PARA CEJAS DOBLE PUNTA",
+    "price": 28000.0,
+    "stock": 300,
+    "description": "El lapíz para cejas doble punta By beauty glazed es ideal para contornear y rellenar tus cejas.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 7,
-      "idCategory": 1,
-      "name": "POMADA PARA CEJAS RUBY ROSE",
-      "price": 15000.0,
-      "stock": 300,
-      "description": "La pomada para cejas, son un producto en crema (parecido a un betún) que nos ayuda a crear un estilo natural y ligero, además, tiene la ventaja de fijarse mejor, por tanto, son una excelente opción para lograr unas cejas naturales y bien definidas por más tiempo.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 7,
+    "idCategory": 1,
+    "name": "POMADA PARA CEJAS RUBY ROSE",
+    "price": 15000.0,
+    "stock": 300,
+    "description": "La pomada para cejas, son un producto en crema (parecido a un betún) que nos ayuda a crear un estilo natural y ligero, además, tiene la ventaja de fijarse mejor, por tanto, son una excelente opción para lograr unas cejas naturales y bien definidas por más tiempo.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 8,
-      "idCategory": 1,
-      "name": "SOMBRA CRYPTIC",
-      "price": 8000.0,
-      "stock": 500,
-      "description": "Atrévete a realizar looks para usar durante el día así o la noche, Okalan Cryptic Nude Paleta de Sombras te ofrece 18 tonos hermosos y coloridos, entre ellos son 10 mate, 4 cromos dúo reflectantes, 2 formularios de Glitter, 1 perla prensada y 1 tono corrector para aumentar la sombra aplicada en la parte superior.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 8,
+    "idCategory": 1,
+    "name": "SOMBRA CRYPTIC",
+    "price": 8000.0,
+    "stock": 500,
+    "description": "Atrévete a realizar looks para usar durante el día así o la noche, Okalan Cryptic Nude Paleta de Sombras te ofrece 18 tonos hermosos y coloridos, entre ellos son 10 mate, 4 cromos dúo reflectantes, 2 formularios de Glitter, 1 perla prensada y 1 tono corrector para aumentar la sombra aplicada en la parte superior.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 9,
-      "idCategory": 1,
-      "name": "LAPIZ DELINEADOR AZUL PASTEL",
-      "price": 15000.0,
-      "stock": 300,
-      "description": "Gel de larga duración, fórmula a prueba de manchas, cobertura total, aplicación suave, lápiz automático, solo gire y aplique, probado oftalmológicamente, fórmula vegana.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 9,
+    "idCategory": 1,
+    "name": "LAPIZ DELINEADOR AZUL PASTEL",
+    "price": 15000.0,
+    "stock": 300,
+    "description": "Gel de larga duración, fórmula a prueba de manchas, cobertura total, aplicación suave, lápiz automático, solo gire y aplique, probado oftalmológicamente, fórmula vegana.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   },
   {
-      "id": 10,
-      "idCategory": 1,
-      "name": "PESTAÑAS 3D",
-      "price": 8000.0,
-      "stock": 400,
-      "description": "Las pestañas postizas siempre serán ese toque ideal para tu look, Pestañas 3d Most Beauty, Pelo natural  y  prometen durarte hasta 30 puestas.",
-      "imgUrl": null,
-      "category": {
-          "id": 1,
-          "description": "eyes"
-      },
-      "status": "ACTIVO"
+    "id": 10,
+    "idCategory": 1,
+    "name": "PESTAÑAS 3D",
+    "price": 8000.0,
+    "stock": 400,
+    "description": "Las pestañas postizas siempre serán ese toque ideal para tu look, Pestañas 3d Most Beauty, Pelo natural y prometen durarte hasta 30 puestas.",
+    "imgUrl": "NULL",
+
+    "status": "ACTIVO"
   }
 ]
