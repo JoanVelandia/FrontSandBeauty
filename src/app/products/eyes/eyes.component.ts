@@ -9,65 +9,42 @@ import { LocalStorageService } from './../../core/services/localStorage/local-st
 @Component({
   selector: 'app-eyes',
   templateUrl: './eyes.component.html',
-  styleUrls: ['./eyes.component.scss']
+  styleUrls: ['./eyes.component.scss'],
 })
 export class EyesComponent implements OnInit {
-
   eyesProducts: Product[] = [];
   carts: Product[] = [];
   client = false;
 
-  constructor(
-    private localStorage: LocalStorageService,
-    private productService: ProductsService
-  ) { }
+  constructor(private productService: ProductsService) {}
 
   ngOnInit(): void {
     this.loadProducts();
   }
 
-  loadProducts(): void
-  {
+  loadProducts(): void {
     this.eyesProducts = this.productService.getListEye();
-
   }
 
-  generateOrder(item: Product): void
-  {
-    const buyer: User = this.localStorage.getItem('CURRENT_USER') as User;
+  generateOrder(item: Product): void {
+    /*const buyer: User = this.localStorage.getItem('CURRENT_USER') as User;
     const product: Product = item;
     const products: Product[] = [];
-    let amoutOrders: number;
-    if (this.localStorage.getItem('amoutOrders') !== null)
-    {
-      amoutOrders = this.localStorage.getItem('amoutOrders') as number;
-    }else
-    {
-      amoutOrders = 0;
-    }
+
     products.push(product);
     const date = new Date().toDateString() ;
-   // const newOrder: Order = new Order(buyer.nickName, date, products, product.price );
+    //const newOrder: Order = new Order(buyer.nickName, date, products, product.price );
     //this.localStorage.setItem('order' + amoutOrders, newOrder);
     amoutOrders = Number(amoutOrders) + Number(1);
-    this.localStorage.setItem('amoutOrders', String(amoutOrders) );
+    this.localStorage.setItem('amoutOrders', String(amoutOrders) );*/
   }
 
-  addCart(product: Product): void
-  {
-    let amoutCarts: number;
-    const buyer: User = this.localStorage.getItem('CURRENT_USER') as User;
-    if (this.localStorage.getItem('amoutCarts') !== null)
-    {
-      amoutCarts = this.localStorage.getItem('amoutCarts') as number;
-    }else
-    {
-      amoutCarts = -1;
-    }
+  addCart(product: Product): void {
+    /*let amoutCarts: number;
+
     this.carts.push(product);
     amoutCarts = Number(amoutCarts) + Number(1);
-    this.localStorage.setItem('amoutCarts', String(amoutCarts) );
-    this.localStorage.setItem('cart' + amoutCarts, this.carts);
+    this.localStorage.setItem('amoutCarts', String(amoutCarts));
+    this.localStorage.setItem('cart' + amoutCarts, this.carts);*/
   }
-
 }

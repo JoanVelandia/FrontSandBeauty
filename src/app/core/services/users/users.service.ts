@@ -7,24 +7,20 @@ import { LocalStorageService } from '../localStorage/local-storage.service';
   providedIn: 'root',
 })
 export class UsersService {
-
-  users: User[] = [];
+  user!: User;
 
   constructor(private localStorage: LocalStorageService) {}
 
-  setSesion(currentUser: User): void {
-    this.localStorage.setSesion(currentUser);
+  setSession(currentUser: User): void {
+    this.localStorage.setSession(currentUser);
   }
 
-  auth(user: string, password: string): any{
+  auth(user: string, password: string): any {
     if (this.users.length === 0) {
       this.loardUsers();
     }
     for (const currentUser of this.users) {
-      if (
-        currentUser.nickName === user &&
-        currentUser.password === password
-      ) {
+      if (currentUser.nickName === user && currentUser.password === password) {
         return currentUser;
       }
     }

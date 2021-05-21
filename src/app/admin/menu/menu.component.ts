@@ -6,28 +6,23 @@ import { LocalStorageService } from 'src/app/core/services/localStorage/local-st
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-
   constructor(
     private route: Router,
-    private localStorage: LocalStorageService
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  navigateFace(route: string): void
-  {
+  navigateFace(route: string): void {
     const rou = '/' + route;
     this.route.navigate([rou]);
   }
 
-  navigateReports(): void{
-    const user: User = this.localStorage.getItem('CURRENT_USER') as User;
+  navigateReports(): void {
+    /*const user: User = this.localStorage.getItem('CURRENT_USER') as User;
     const rou = '/admin/' + user.nickName + '/reports';
-    this.route.navigate([rou]);
+    this.route.navigate([rou]);*/
   }
-
 }

@@ -15,34 +15,18 @@ export class LipsComponent implements OnInit {
   carts: Product[] = [];
   client = false;
 
-  constructor(
-    private localStorage: LocalStorageService,
-    private productService: ProductsService,
-  ){}
+  constructor(private productService: ProductsService) {}
 
   ngOnInit(): void {
     this.loadProducts();
   }
 
   loadProducts(): void {
-
-    //this.lipsProducts = this.localStorage.getLipsProducts();
-
-    this.productService.getLipsProducts().subscribe( lipsProducts => {
-      console.log("REST API\n");
-      console.log(lipsProducts);
-      console.log("LocalStorage\n");
-      console.log(this.localStorage.getLipsProducts());
-      this.lipsProducts = lipsProducts;
-    });
-
-    if (this.localStorage.getItem('CURRENT_USER') !== null) {
-      this.client = true;
-    }
+    this.lipsProducts = this.productService.getListLip();
   }
 
   generateOrder(item: Product): void {
-    const buyer: User = this.localStorage.getItem('CURRENT_USER') as User;
+    /*const buyer: User = this.localStorage.getItem('CURRENT_USER') as User;
     const product: Product = item;
 
     const products: Product[] = [];
@@ -55,18 +39,18 @@ export class LipsComponent implements OnInit {
     products.push(product);
     const date = new Date().toDateString();
     //const newOrder: Order = new Order(
-      //buyer.nickName,
-      //date,
-      //products,
-      //product.price
+    //buyer.nickName,
+    //date,
+    //products,
+    //product.price
     //);
     //this.localStorage.setItem('order' + amoutOrders, newOrder);
     amoutOrders = Number(amoutOrders) + Number(1);
-    this.localStorage.setItem('amoutOrders', String(amoutOrders));
+    this.localStorage.setItem('amoutOrders', String(amoutOrders));*/
   }
 
   addCart(product: Product): void {
-    let amoutCarts: number;
+    /*let amoutCarts: number;
     const buyer: User = this.localStorage.getItem('CURRENT_USER') as User;
     if (this.localStorage.getItem('amoutCarts') !== null) {
       amoutCarts = this.localStorage.getItem('amoutCarts') as number;
@@ -76,6 +60,6 @@ export class LipsComponent implements OnInit {
     this.carts.push(product);
     amoutCarts = Number(amoutCarts) + Number(1);
     this.localStorage.setItem('amoutCarts', String(amoutCarts));
-    this.localStorage.setItem('cart' + amoutCarts, this.carts);
+    this.localStorage.setItem('cart' + amoutCarts, this.carts);*/
   }
 }

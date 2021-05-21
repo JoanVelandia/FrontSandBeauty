@@ -1,62 +1,65 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../models/product/product.model';
-import { LocalStorageService } from '../localStorage/local-storage.service';
-import {HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
-
-
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-
   EyesProducts: Product[] = [];
   FaceProducts: Product[] = [];
   LipsProducts: Product[] = [];
+  product!: Product;
 
-  constructor(
-    private localStrorageService: LocalStorageService,
-    private request: HttpClient,
-    private route: Router,
+  constructor(private request: HttpClient) {}
 
-  ) {}
-
-  getListEye (): Product [] {
-      this.getEyesProducts().subscribe( eyesProducts => {
+  getListEye(): Product[] {
+    this.getEyesProducts().subscribe((eyesProducts) => {
       this.EyesProducts = eyesProducts;
     });
 
     return this.EyesProducts;
-
   }
 
-  getListFace (): Product [] {
-    this.getFaceProducts().subscribe( faceProducts => {
-    this.FaceProducts = faceProducts;
-  });
+  getListFace(): Product[] {
+    this.getFaceProducts().subscribe((faceProducts) => {
+      this.FaceProducts = faceProducts;
+    });
 
-  return this.FaceProducts;
+    return this.FaceProducts;
+  }
 
-}
+  getListLip(): Product[] {
+    this.getLipsProducts().subscribe((LipsProducts) => {
+      this.LipsProducts = LipsProducts;
+    });
 
-getListLip (): Product [] {
-  this.getLipsProducts().subscribe( LipsProducts => {
-  this.LipsProducts = LipsProducts;
-});
+    return this.LipsProducts;
+  }
 
-return this.LipsProducts;
+  getProduct(idBefore: string): Product {
+    this.get(idBefore).subscribe((pro) => {
+      this.product = pro;
+    });
 
-}
+    return this.product;
+  }
 
-  getProductById(id: number): Observable<Product>{
+  deleteProduct(item: Product): void {
+    this.delete(item).subscribe((itm) => {});
+  }
+
+  saveProduct(item: Product): void {
+    this.saveProducts(item).subscribe((itm) => {});
+  }
+
+  getProductById(id: number): Observable<Product> {
     const URI = '/SandBeauty/api/products/' + String(id);
     return this.request.get<Product>(URI);
   }
 
   getLipsProducts(): Observable<Product[]> {
-
     return this.request.get<Product[]>('/SandBeauty/api/products/category/3');
   }
 
@@ -67,22 +70,17 @@ return this.LipsProducts;
     return this.request.get<Product[]>('/SandBeauty/api/products/category/1');
   }
 
-  saveProducts(item: Product): Observable<Product>{
-
+  saveProducts(item: Product): Observable<Product> {
     return this.request.post<Product>('/SandBeauty/api/products/save', item);
   }
 
   delete(item: Product): Observable<Product> {
     const URI = '/SandBeauty/api/products/delete/' + String(item.id);
     return this.request.delete<Product>(URI);
-
   }
 
-  get(idBefore: string):  Observable<Product> {
+  get(idBefore: string): Observable<Product> {
     const URI = '/SandBeauty/api/products/' + idBefore;
     return this.request.get<Product>(URI);
   }
-
-
 }
-

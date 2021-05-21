@@ -28,7 +28,7 @@ export class LocalStorageService {
     return this.users;
   }
 
-  setSesion(currentUser: User): void {
+  setSession(currentUser: User): void {
     localStorage.setItem(this.currentUser, JSON.stringify(currentUser));
   }
 

@@ -4,11 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/core/services/users/users.service';
 import { User } from './../../core/models/user/user.model';
 
-
 @Component({
   selector: 'app-singup',
   templateUrl: './singup.component.html',
-  styleUrls: ['./singup.component.scss']
+  styleUrls: ['./singup.component.scss'],
 })
 export class SingupComponent implements OnInit {
   hide: boolean = Boolean();
@@ -26,20 +25,17 @@ export class SingupComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onRegister(): void
-  {
+  onRegister(): void {
     if (!this.loginForm.valid) {
       return;
-    }else
-    {
+    } else {
       const nickName = this.loginForm.controls.nickname.value;
-      const pasword = this.loginForm.controls.password.value;
+      const password = this.loginForm.controls.password.value;
       const rol: boolean = this.loginForm.controls.rol.value;
-      this.currentUser = new User(nickName, pasword, rol);
-      this.usersService.setSesion(this.currentUser);
+      this.currentUser = new User(0, nickName, password, rol);
+      this.usersService.setSession(this.currentUser);
       this.router.navigate(['/client/' + this.currentUser.nickName]);
     }
   }

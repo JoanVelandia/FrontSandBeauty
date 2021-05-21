@@ -15,29 +15,16 @@ export class OrdersComponent implements OnInit {
   orders: Order[] = [];
   constructor(
     private ordersService: OrdersService,
-    private localStorageService: LocalStorageService,
     private route: Router
   ) {}
   ngOnInit(): void {
-    this.user = this.localStorageService.getItem('CURRENT_USER') as User;
-    this.orders = this.ordersService.getOrders(this.user);
+    /*this.user = this.localStorageService.getItem('CURRENT_USER') as User;
+    this.orders = this.ordersService.getOrders(this.user);*/
     this.loadOrders();
   }
 
   loadOrders(): void {
-    if (this.localStorageService.getItem('amoutOrders') !== null) {
-      let key: string;
-      let currentOrder: Order;
-      const sized: number = this.localStorageService.getItem(
-        'amoutOrders'
-      ) as number;
-      for (let i = 0; i < sized; i++) {
-        key = 'order' + i;
-        console.log(key);
-        currentOrder = this.localStorageService.getItem(key) as Order;
-        this.orders.push(currentOrder);
-      }
-    }
+    this.orders = this.ordersService.getOrders();
   }
 
   detailOrderNavigate(currentOrder: number): void {

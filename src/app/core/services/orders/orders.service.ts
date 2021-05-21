@@ -1,39 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../../models/order/order.model';
 import { User } from '../../models/user/user.model';
-import { LocalStorageService } from '../localStorage/local-storage.service';
-import {HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrdersService {
-  constructor(private localStorage: LocalStorageService,
-  private request: HttpClient) {}
+  ord!: Order;
+  orders: Order[] = [];
+
+  constructor(private request: HttpClient) {}
+
+  getOrder(id: string): Order {
+    this.getSale(id).subscribe((sale) => {
+      this.ord = sale;
+    });
+    return this.ord;
+  }
+
+  getOrders(): Order[] {
+    this.getSales().subscribe((sales) => {
+      this.orders = sales;
+    });
+    return this.orders;
+  }
 
   getSales(): Observable<Order[]> {
-      return this.request.get<Order[]>('/SandBeauty/api/sales/all');
-    }
+    return this.request.get<Order[]>('/SandBeauty/api/sales/all');
+  }
 
-  getSale(id: string): Observable<Order>
-  {
+  getSale(id: string): Observable<Order> {
     return this.request.get<Order>('/SandBeauty/api/sales/' + id);
   }
 
-  getOrders(user: User): Order[] {
-    const orderUser = this.localStorage.getOrders();
+  getOrdersOf(user: User): Order[] {
     const ordersFind: Order[] = [];
-
-    for (const order of orderUser) {
-      //if (user.nickName === order.clientId) {
-        //ordersFind.push(order);
-      //}
+    for (const order of this.orders) {
+      if (user.id  === order.clientId) {
+        ordersFind.push(order);
+      }
     }
     return ordersFind;
   }
 
-  /* getNewOrders(): Order[] {
+  /*getNewOrders(): Order[] {
     this.localStorage.getNewOrders();
   } */
 }

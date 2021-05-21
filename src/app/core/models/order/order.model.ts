@@ -1,10 +1,8 @@
-import { Product } from '../product/product.model';
-
-interface purchases{
-  productId: number,
-  quantity: number,
-  price: number,
-  total: number
+interface Purchases {
+  productId: number;
+  quantity: number;
+  price: number;
+  total: number;
 }
 
 export class Order {
@@ -14,7 +12,6 @@ export class Order {
     public date: string,
     public cash: boolean,
     public delivered: boolean,
-    public products: purchases[],
-
-  ){}
+    public products: Purchases[]
+  ) {}
 }
