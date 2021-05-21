@@ -10,13 +10,11 @@ import { LocalStorageService } from '../localStorage/local-storage.service';
 })
 export class UsersService {
   user!: User;
-  token!: string;
 
   constructor(
     private localStorage: LocalStorageService,
     private request: HttpClient
   ) {
-    this.token = localStorage.getToken('authorization');
   }
 
   setSession(currentUser: User): void {
@@ -31,9 +29,10 @@ export class UsersService {
   }
 
   getUserByName(user: string): Observable<User> {
-    const URI = '/SandBeauty/api/client/name/' + user;
+    const URI = '/SandBeauty/api/user/client/name/' + user;
+    const token = this.localStorage.getToken('authorization');
     const header = {
-      headers: new HttpHeaders().set('Authorization', this.token),
+      headers: new HttpHeaders().set('Authorization', token),
     };
     return this.request.get<User>(URI, header);
   }

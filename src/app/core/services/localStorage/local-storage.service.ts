@@ -44,7 +44,7 @@ export class LocalStorageService {
 
   getToken(key: string): any {
     if (localStorage.getItem(key) !== null) {
-      return localStorage.getItem(key) || '{}';
+      return localStorage.getItem(key);
     } else {
       return null;
     }
