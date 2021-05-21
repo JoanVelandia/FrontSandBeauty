@@ -22,7 +22,9 @@ export class LipsComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.lipsProducts = this.productService.getListLip();
+    this.productService.getLipsProducts().subscribe(products => {
+      this.lipsProducts = products;
+    });
   }
 
   generateOrder(item: Product): void {

@@ -23,7 +23,9 @@ export class EyesComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.eyesProducts = this.productService.getListEye();
+    this.productService.getEyesProducts().subscribe( products => {
+      this.eyesProducts = products;
+    });
   }
 
   generateOrder(item: Product): void {

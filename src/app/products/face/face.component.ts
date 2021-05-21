@@ -22,7 +22,9 @@ export class FaceComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.faceProducts = this.productService.getListFace();
+    this.productService.getFaceProducts().subscribe((products) => {
+      this.faceProducts = products;
+    });
   }
 
   generateOrder(item: Product): void {

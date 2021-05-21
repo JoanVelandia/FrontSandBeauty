@@ -18,7 +18,6 @@ export class ProductsService {
     this.getEyesProducts().subscribe((eyesProducts) => {
       this.EyesProducts = eyesProducts;
     });
-
     return this.EyesProducts;
   }
 
