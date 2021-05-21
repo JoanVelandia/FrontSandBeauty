@@ -31,17 +31,7 @@ export class LipsComponent implements OnInit {
 
   loadProducts(): void
   {
-    this.productService.getLipsProducts().subscribe( lipsProducts => {
-      console.log("REST API\n");
-      console.log(lipsProducts);
-      console.log("LocalStorage\n");
-      console.log(this.localStorage.getLipsProducts());
-      this.LipsProducts = lipsProducts;
-    });
-
-    if (this.localStorage.getItem('CURRENT_USER') !== null) {
-      this.client = true;
-    }
+    this.LipsProducts = this.productService.getListLip();
   }
 
   navigate(): void

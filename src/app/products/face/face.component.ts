@@ -24,17 +24,8 @@ export class FaceComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.productService.getFaceProducts().subscribe( faceProducts => {
-      console.log("REST API\n");
-      console.log(faceProducts);
-      console.log("LocalStorage\n");
-      console.log(this.localStorage.getFaceProducts());
-      this.faceProducts = faceProducts;
-    });
+    this.faceProducts = this.productService.getListFace();
 
-    if (this.localStorage.getItem('CURRENT_USER') !== null) {
-      this.client = true;
-    }
   }
 
 

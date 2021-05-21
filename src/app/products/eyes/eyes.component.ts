@@ -28,17 +28,8 @@ export class EyesComponent implements OnInit {
 
   loadProducts(): void
   {
-    this.productService.getEyesProducts().subscribe( eyesProducts => {
-      console.log("REST API\n");
-      console.log(eyesProducts);
-      console.log("LocalStorage\n");
-      console.log(this.localStorage.getEyesProducts());
-      this.eyesProducts = eyesProducts;
-    });
+    this.eyesProducts = this.productService.getListEye();
 
-    if (this.localStorage.getItem('CURRENT_USER') !== null) {
-      this.client = true;
-    }
   }
 
   generateOrder(item: Product): void

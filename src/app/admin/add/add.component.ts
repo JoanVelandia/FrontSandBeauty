@@ -59,9 +59,9 @@ export class AddComponent implements OnInit {
 
 
   loadProducts(): void {
-    this.ProductosLips = this.localStorage.getLipsProducts();
-    this.ProductosFace = this.localStorage.getFaceProducts();
-    this.ProductosEyes = this.localStorage.getEyesProducts();
+    this.ProductosLips = this.productService.getListLip();
+    this.ProductosFace = this.productService.getListFace();
+    this.ProductosEyes = this.productService.getListEye();
   }
 
   add(): void {
