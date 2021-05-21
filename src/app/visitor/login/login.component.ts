@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup = this.fb.group({
     nickname: ['', [Validators.required, Validators.minLength(6)]],
     password: ['', [Validators.required, Validators.minLength(5)]],
-    rol: [''],
   });
 
   constructor(
@@ -33,18 +32,19 @@ export class LoginComponent implements OnInit {
       return;
     } else {
       const nickName = this.loginForm.controls.nickname.value;
-      const pasword = this.loginForm.controls.password.value;
-      if (this.usersService.auth(nickName, pasword) !== null) {
-        this.currentUser = this.usersService.auth(nickName, pasword);
-        this.usersService.setSesion(this.currentUser);
+      const password = this.loginForm.controls.password.value;
+      this.currentUser = this.usersService.auth(nickName, password);
+
+      if (this.usersService.auth(nickName, password) !== null) {
+        this.usersService.setSession(this.currentUser);
         console.log('rol ' + this.currentUser.rol);
-        if (this.currentUser.rol) {
+        if (this.currentUser.rol === "ROL_ADMIN") {
           this.setLoginAdmin();
         } else {
           this.setLoginClient();
         }
       } else {
-        alert('usurio no registrado');
+        alert('usuario no registrado');
       }
     }
   }
