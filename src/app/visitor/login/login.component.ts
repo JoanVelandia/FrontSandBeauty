@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-
   ngOnInit(): void {}
 
   onLogin(): void {
@@ -33,25 +32,49 @@ export class LoginComponent implements OnInit {
     } else {
       const nickName = this.loginForm.controls.nickname.value;
       const password = this.loginForm.controls.password.value;
-      this.currentUser = this.usersService.auth(nickName, password);
+      this.usersService.auth(nickName, password).subscribe(
+        (usr) => {
+          console.log('usr: ' + usr);
+          this.usersService.getUserByName(nickName).subscribe(
+            (userFound) => {
+              console.log('usrFound: ' + userFound);
+              this.currentUser = userFound;
 
-      if (this.usersService.auth(nickName, password) !== null) {
-        this.usersService.setSession(this.currentUser);
-        console.log('rol ' + this.currentUser.rol);
-        if (this.currentUser.rol === "ROL_ADMIN") {
-          this.setLoginAdmin();
-        } else {
-          this.setLoginClient();
+              this.initLogin();
+
+
+            },
+            (error2) => {
+              console.error('error2: ' + error2);
+            }
+          );
+        },
+        (error) => {
+          console.error('error: ' + error);
         }
-      } else {
-        alert('usuario no registrado');
-      }
+      );
+    }
+  }
+  initLogin(): void {
+    console.log('currentUser: ' + this.currentUser);
+
+    if (this.currentUser !== null) {
+      this.usersService.setSession(this.currentUser);
+      this.currentUser.roles.forEach((element) => {
+        if (element.description === 'ADMIN') {
+          console.log('is admin');
+        } else if (element.description === 'CLIENT') {
+          console.log('is client');
+        }
+      });
+    } else {
+      alert('unregister');
     }
   }
   setLoginClient(): void {
-    this.router.navigate(['/client/' + this.currentUser.nickName + '/lips']);
+    this.router.navigate(['/client/' + this.currentUser.nickname + '/lips']);
   }
   setLoginAdmin(): void {
-    this.router.navigate(['/admin/' + this.currentUser.nickName]);
+    this.router.navigate(['/admin/' + this.currentUser.nickname]);
   }
 }

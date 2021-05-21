@@ -28,7 +28,7 @@ export class OrdersComponent implements OnInit {
   }
 
   detailOrderNavigate(currentOrder: number): void {
-    const rou = '/client/' + this.user.nickName + '/detailOrder/';
+    const rou = '/client/' + this.user.nickname + '/detailOrder/';
     this.route.navigate([rou + currentOrder]);
   }
 }

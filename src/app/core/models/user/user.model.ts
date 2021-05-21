@@ -4,10 +4,10 @@ import { Rol } from '../rol/rol.model';
 export class User {
   constructor(
     public id: number,
-    public nickName: string,
+    public nickname: string,
     public password: string,
-    public address: string,
-    public purchases: Order[],
+    public address: string | null,
+    public purchases: Order[] | any[],
     public roles: Rol[]
   ){}
 }

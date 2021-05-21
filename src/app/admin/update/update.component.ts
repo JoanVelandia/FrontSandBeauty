@@ -65,7 +65,7 @@ export class UpdateComponent implements OnInit {
 
     //this.currentUser = this.localStorageService.getItem('CURRENT_USER') as User;
 
-    this.route2.navigate(['/admin/' + this.currentUser.nickName + '/eyes']);
+    this.route2.navigate(['/admin/' + this.currentUser.nickname + '/eyes']);
   }
 
   discard(): void {

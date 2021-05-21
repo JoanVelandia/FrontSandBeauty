@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Auth } from '../../models/auth/auth.model';
 import { User } from '../../models/user/user.model';
 import { LocalStorageService } from '../localStorage/local-storage.service';
@@ -10,27 +10,35 @@ import { LocalStorageService } from '../localStorage/local-storage.service';
 })
 export class UsersService {
   user!: User;
+  token!: string;
 
   constructor(
     private localStorage: LocalStorageService,
     private request: HttpClient
-  ) {}
+  ) {
+    this.token = localStorage.getToken('authorization');
+  }
 
   setSession(currentUser: User): void {
     this.localStorage.setSession(currentUser);
   }
 
-  auth(user: string, password: string): User {
-    
-    this.request.post<any>('/SandBeauty/api/login', new Auth(user, password));
-    return null;
+  auth(user: string, password: string): Observable<any> {
+    return this.request.post<any>(
+      '/SandBeauty/api/login',
+      new Auth(user, password)
+    );
   }
 
-  loardUsers(): any {
-    this.users = this.localStorage.getUsers();
+  getUserByName(user: string): Observable<User> {
+    const URI = '/SandBeauty/api/client/name/' + user;
+    const header = {
+      headers: new HttpHeaders().set('Authorization', this.token),
+    };
+    return this.request.get<User>(URI, header);
   }
 
   logout(): void {
-    this.localStorage.logOut();
+    /*this.localStorage.logOut();*/
   }
 }

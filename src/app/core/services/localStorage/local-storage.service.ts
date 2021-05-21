@@ -21,15 +21,9 @@ export class LocalStorageService {
 
   constructor() {}
 
-  getUsers(): User[] {
-    if (this.users.length === 0) {
-      this.users = dataUser as User[];
-    }
-    return this.users;
-  }
 
   setSession(currentUser: User): void {
-    localStorage.setItem(this.currentUser, JSON.stringify(currentUser));
+    localStorage.setItem(this.currentUser, JSON.stringify('currentUser'));
   }
 
   isLogIn(): boolean {
@@ -48,19 +42,27 @@ export class LocalStorageService {
     }
   }
 
+  getToken(key: string): any {
+    if (localStorage.getItem(key) !== null) {
+      return localStorage.getItem(key) || '{}';
+    } else {
+      return null;
+    }
+  }
+
   setItem(key: string, val: any): void {
     localStorage.setItem(key, JSON.stringify(val));
   }
 
   clearCart(): void {
-    const cartSize: number = this.getItem('amoutCarts') as number;
+    const cartSize: number = this.getItem('amountCarts') as number;
     let key: string;
     for (let i = 0; i <= cartSize; i++) {
       key = 'cart' + String(i);
-      console.log('removiendo: ' + key);
+      console.log('removing: ' + key);
       localStorage.removeItem(key);
     }
-    localStorage.removeItem('amoutCarts');
+    localStorage.removeItem('amountCarts');
   }
 
   logOut(): void {

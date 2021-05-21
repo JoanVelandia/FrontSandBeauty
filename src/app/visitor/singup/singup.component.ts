@@ -34,9 +34,9 @@ export class SingupComponent implements OnInit {
       const nickName = this.loginForm.controls.nickname.value;
       const password = this.loginForm.controls.password.value;
       const rol: boolean = this.loginForm.controls.rol.value;
-      this.currentUser = new User(0, nickName, password, rol);
+      /*this.currentUser = new User(0, nickName, password, rol);
       this.usersService.setSession(this.currentUser);
-      this.router.navigate(['/client/' + this.currentUser.nickName]);
+      this.router.navigate(['/client/' + this.currentUser.nickName]);*/
     }
   }
 }
