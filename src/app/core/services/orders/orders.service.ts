@@ -8,9 +8,8 @@ import { UsersService } from 'src/app/core/services/users/users.service';
   providedIn: 'root',
 })
 export class OrdersService {
-
   ord!: Order;
-  currentUser !: User;
+  currentUser!: User;
   orders: Order[] = [];
 
   constructor(private request: HttpClient, private userService: UsersService) {}
@@ -39,16 +38,20 @@ export class OrdersService {
 
   getOrdersOf(): Order[] {
     const ordersFind: Order[] = [];
-    const user = this.userService.getCurrentUser();
+    this.currentUser = this.userService.getCurrentUser();
     this.getSales().subscribe((sales) => {
       this.orders = sales;
       for (const order of this.orders) {
-        if (user.id === order.clientId) {
+        if (this.currentUser.id === order.clientId) {
           ordersFind.push(order);
         }
       }
     });
     return ordersFind;
+  }
+
+  getCurrentUser(name: string): Observable<User> {
+    return this.userService.getUserByName(name);
   }
 
   /*getNewOrders(): Order[] {

@@ -32,28 +32,23 @@ export class LoginComponent implements OnInit {
     } else {
       const nickName = this.loginForm.controls.nickname.value;
       const password = this.loginForm.controls.password.value;
-      this.usersService.auth(nickName, password).subscribe(
-        () => {
-          this.usersService.getUserByName(nickName).subscribe(
-            (userFound) => {
-              console.log('usrFound: ');
-              console.log(userFound);
-              this.currentUser = userFound;
-              this.usersService.setCurrentUser(this.currentUser);
-              this.initLogin();
-            },
-            (error) => {
-              console.error('error: ' + error);
-            }
-          );
-        },
-      );
+      this.usersService.auth(nickName, password).subscribe(() => {
+        this.usersService.getUserByName(nickName).subscribe(
+          (userFound) => {
+            console.log('usrFound: ');
+            console.log(userFound);
+            this.currentUser = userFound;
+            this.usersService.setCurrentUser(this.currentUser);
+            this.initLogin();
+          },
+          (error) => {
+            console.error('error: ' + error);
+          }
+        );
+      });
     }
   }
   initLogin(): void {
-    console.log('currentUser: ' + this.currentUser);
-    console.log(this.currentUser);
-
     if (this.currentUser !== null) {
       this.usersService.setSession(this.currentUser);
       this.currentUser.roles.forEach((element) => {

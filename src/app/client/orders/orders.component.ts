@@ -19,7 +19,18 @@ export class OrdersComponent implements OnInit {
   }
 
   loadOrders(): void {
-    this.orders = this.ordersService.getOrdersOf();
+    this.ordersService.getSales().subscribe((sales) => {
+      const urlTree = this.router.parseUrl(this.router.url);
+      const cli = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+      this.ordersService.getCurrentUser(cli).subscribe((usr: User) => {
+        this.orders = [];
+        for (const order of sales) {
+          if (usr.id === order.clientId) {
+            this.orders.push(order);
+          }
+        }
+      });
+    });
   }
 
   detailOrderNavigate(currentOrder: number): void {

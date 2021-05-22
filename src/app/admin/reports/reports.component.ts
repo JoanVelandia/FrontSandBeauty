@@ -19,7 +19,9 @@ export class ReportsComponent implements OnInit {
   }
 
   loadOrder(): void {
-    this.Orders = this.orderServices.getOrders();
+    this.orderServices.getSales().subscribe((sales) => {
+      this.Orders = sales;
+    });
   }
 
   navigateDetails(id: number): void {
