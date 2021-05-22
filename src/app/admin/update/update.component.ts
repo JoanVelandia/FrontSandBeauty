@@ -28,7 +28,6 @@ export class UpdateComponent implements OnInit {
     name: [''],
     price: [''],
     desc: [''],
-    img: [''],
     cate: [''],
     stock: [''],
     imgForm: [''],
@@ -36,8 +35,8 @@ export class UpdateComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private route2: Router,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
     private productService: ProductsService
   ) {}
 
@@ -45,8 +44,8 @@ export class UpdateComponent implements OnInit {
 
   update(): void {
     const name = this.loginForm.controls.name.value;
-    const desc = this.loginForm.controls.desc.value;
     const price = this.loginForm.controls.price.value;
+    const desc = this.loginForm.controls.desc.value;
 
     /************************************************************************/
     const idCategory = this.loginForm.controls.cate.value;
@@ -54,21 +53,37 @@ export class UpdateComponent implements OnInit {
     const newImg = this.loginForm.controls.imgForm.value;
     /***********************************************************************/
 
-    const idPrev = this.route.snapshot.paramMap.get('product') as string;
-    const prevProduct = this.productService.getProduct(idPrev);
-    this.productService.deleteProduct(prevProduct);
+    const idPrev = this.activatedRoute.snapshot.paramMap.get(
+      'product'
+    ) as string;
+    this.productService.get(idPrev).subscribe((product) => {
+      const prevProduct = product;
+      this.productService.delete(prevProduct).subscribe(() => {
+        this.productService
+          .saveProducts(
+            new Product(
+              -1,
+              idCategory,
+              newImg,
+              name,
+              price,
+              stock,
+              desc,
+              'ACTIVO'
+            )
+          )
+          .subscribe(() => {
+            const urlTree = this.router.parseUrl(this.router.url);
+            const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
 
-    this.productService.saveProducts(
-      new Product(0, idCategory, newImg, name, price, stock, desc, 'ACTIVO')
-    );
-
-    //this.currentUser = this.localStorageService.getItem('CURRENT_USER') as User;
-
-    this.route2.navigate(['/admin/' + this.currentUser.nickname + '/eyes']);
+            this.router.navigate(['/admin/' + adm + '/eyes']);
+          });
+      });
+    });
   }
 
   discard(): void {
-    const urlTree = this.route2.parseUrl(this.route2.url);
+    const urlTree = this.router.parseUrl(this.router.url);
     const adm =
       urlTree.root.children[PRIMARY_OUTLET].segments[1].path + '/eyes';
     this.navigate('admin/' + adm);
@@ -76,6 +91,6 @@ export class UpdateComponent implements OnInit {
 
   navigate(uri: string): void {
     const rou = '/' + uri;
-    this.route2.navigate([rou]);
+    this.router.navigate([rou]);
   }
 }

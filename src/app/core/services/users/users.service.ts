@@ -12,8 +12,7 @@ export class UsersService {
   constructor(
     private localStorage: LocalStorageService,
     private request: HttpClient
-  ) {
-  }
+  ) {}
 
   setSession(currentUser: User): void {
     this.localStorage.setSession(currentUser);
@@ -28,14 +27,10 @@ export class UsersService {
 
   getUserByName(user: string): Observable<User> {
     const URI = '/SandBeauty/api/user/client/name/' + user;
-    const token = this.localStorage.getToken('authorization');
-    const header = {
-      headers: new HttpHeaders().set('Authorization', token),
-    };
-    return this.request.get<User>(URI, header);
+    return this.request.get<User>(URI);
   }
 
   logout(): void {
-    /*this.localStorage.logOut();*/
+    this.localStorage.logOut();
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { PRIMARY_OUTLET, Router } from '@angular/router';
 import { User } from 'src/app/core/models/user/user.model';
 import { LocalStorageService } from 'src/app/core/services/localStorage/local-storage.service';
 
@@ -10,19 +10,20 @@ import { LocalStorageService } from 'src/app/core/services/localStorage/local-st
 })
 export class MenuComponent implements OnInit {
   constructor(
-    private route: Router,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {}
 
   navigateFace(route: string): void {
     const rou = '/' + route;
-    this.route.navigate([rou]);
+    this.router.navigate([rou]);
   }
 
   navigateReports(): void {
-    /*const user: User = this.localStorage.getItem('CURRENT_USER') as User;
-    const rou = '/admin/' + user.nickName + '/reports';
-    this.route.navigate([rou]);*/
+    const urlTree = this.router.parseUrl(this.router.url);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+    const route = '/admin/' + adm + '/reports/';
+    this.router.navigate([route]);
   }
 }

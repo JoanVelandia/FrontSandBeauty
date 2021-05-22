@@ -14,13 +14,13 @@ export class DetailsReportComponent implements OnInit {
   total = 0;
 
   constructor(
-    private route: Router,
+    private router: Router,
     private orderService: OrdersService,
     private actiRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    const urlTree = this.route.parseUrl(this.route.url);
+    const urlTree = this.router.parseUrl(this.router.url);
     const adm = urlTree.root.children[PRIMARY_OUTLET].segments[3].path;
     this.idCurrentOrder = adm;
     this.loadProducts();
@@ -40,8 +40,9 @@ export class DetailsReportComponent implements OnInit {
   }
 
   back(): void {
-    /*const user: User = this.localStorage.getItem('CURRENT_USER') as User;
-    const rou = '/admin/' + user.nickName + '/reports';
-    this.route.navigate([rou]);*/
+    const urlTree = this.router.parseUrl(this.router.url);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+    const route = '/admin/' + adm + '/reports/';
+    this.router.navigate([route]);
   }
 }

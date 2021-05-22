@@ -24,7 +24,7 @@ export class EyesComponent implements OnInit {
     this.loadProducts();
   }
 
-  navigate(): void {
+  add(): void {
     const urlTree = this.router.parseUrl(this.router.url);
     const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
     const route = '/admin/' + adm + '/add/';
@@ -38,13 +38,19 @@ export class EyesComponent implements OnInit {
   }
 
   deleteProductEye(item: Product): void {
-    this.productService.deleteProduct(item);
+    this.productService.delete(item).subscribe(() => {
+      this.eyesProducts.forEach((value, index) => {
+        if (value.id === item.id) {
+          this.eyesProducts.splice(index, 1);
+        }
+      });
+    });
   }
 
   update(item: Product): void {
-    /*const currentUser = this.localStorage.getItem('CURRENT_USER') as User;
-    const route = '/admin/' + currentUser.nickName + '/update/';
-    console.log(route + item.id);
-    this.route.navigate([route + item.id]);*/
+    const urlTree = this.router.parseUrl(this.router.url);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+    const route = '/admin/' + adm + '/update/';
+    this.router.navigate([route + item.id]);
   }
 }

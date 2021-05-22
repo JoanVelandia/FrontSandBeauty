@@ -17,6 +17,7 @@ export class AddComponent implements OnInit {
   ProductsLips: Product[] = [];
   Product!: Product;
   public form!: FormGroup;
+  imgULRSS = 'https://definicion.mx/wp-content/uploads/2015/01/Abstracto.jpg';
 
   hide: boolean = Boolean();
 
