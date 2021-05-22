@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
               console.log('usrFound: ');
               console.log(userFound);
               this.currentUser = userFound;
+              this.usersService.setCurrentUser(this.currentUser);
               this.initLogin();
             },
             (error) => {

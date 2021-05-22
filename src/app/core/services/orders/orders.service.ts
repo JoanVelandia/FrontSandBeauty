@@ -37,21 +37,20 @@ export class OrdersService {
     return this.request.get<Order>('/SandBeauty/api/sales/' + id);
   }
 
-  getOrdersOf(user: User): Order[] {
+  getOrdersOf(): Order[] {
     const ordersFind: Order[] = [];
-    for (const order of this.orders) {
-      if (user.id === order.clientId) {
-        ordersFind.push(order);
+    const user = this.userService.getCurrentUser();
+    this.getSales().subscribe((sales) => {
+      this.orders = sales;
+      for (const order of this.orders) {
+        if (user.id === order.clientId) {
+          ordersFind.push(order);
+        }
       }
-    }
+    });
     return ordersFind;
   }
 
-  getClient(clientName: string) {
-    this.userService.getUserByName(clientName).subscribe((user) => {
-      this.currentUser = user;
-    });
-  }
   /*getNewOrders(): Order[] {
     this.localStorage.getNewOrders();
   } */

@@ -9,6 +9,8 @@ import { LocalStorageService } from '../localStorage/local-storage.service';
   providedIn: 'root',
 })
 export class UsersService {
+  currentUser!: User;
+
   constructor(
     private localStorage: LocalStorageService,
     private request: HttpClient
@@ -32,5 +34,12 @@ export class UsersService {
 
   logout(): void {
     this.localStorage.logOut();
+  }
+
+  setCurrentUser(currentUser: User): void {
+    this.currentUser = currentUser;
+  }
+  getCurrentUser(): User {
+    return this.currentUser;
   }
 }

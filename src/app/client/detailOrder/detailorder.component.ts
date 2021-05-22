@@ -25,26 +25,7 @@ export class DetailorderComponent implements OnInit {
     this.showDetailProduct();
   }
 
-  showDetailProduct(): void {
-    const urlTree = this.router.parseUrl(this.router.url);
-    const clientName = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
-    this.ordersService.getClient(clientName);
+  showDetailProduct(): void {}
 
-    /*const productID = this.route.snapshot.paramMap.get('id');
-    this.orders = this.ordersService.getOrdersOf(user);
-    this.loadOrders();
-    console.log('readed: ' + this.orders.length + ' ordes');
-    for (let i = 0; i < this.orders.length; i++) {
-      if (i === Number(productID)) {
-        //this.productsOrder = this.orders[i].products;
-        break;
-      }
-    }*/
-  }
-
-  loadOrders(): void {
-    this.ordersService.getSales().subscribe((sales) => {
-      this.orders = sales;
-    });
-  }
+  loadOrders(): void {}
 }

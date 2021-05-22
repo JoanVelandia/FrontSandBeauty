@@ -15,15 +15,11 @@ export class OrdersComponent implements OnInit {
   orders: Order[] = [];
   constructor(private ordersService: OrdersService, private router: Router) {}
   ngOnInit(): void {
-    /*this.user = this.localStorageService.getItem('CURRENT_USER') as User;
-    this.orders = this.ordersService.getOrders(this.user);*/
     this.loadOrders();
   }
 
   loadOrders(): void {
-    this.ordersService.getSales().subscribe((sales) => {
-      this.orders = sales;
-    });
+    this.orders = this.ordersService.getOrdersOf();
   }
 
   detailOrderNavigate(currentOrder: number): void {
