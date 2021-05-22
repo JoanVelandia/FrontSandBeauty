@@ -44,7 +44,6 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {}
 
   update(): void {
-
     const name = this.loginForm.controls.name.value;
     const desc = this.loginForm.controls.desc.value;
     const price = this.loginForm.controls.price.value;

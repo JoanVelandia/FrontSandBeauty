@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
 import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
 import { ProductsService } from 'src/app/core/services/products/products.service';
@@ -14,7 +14,8 @@ export class LipsComponent implements OnInit {
   client = false;
 
   constructor(
-    private route: Router,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private productService: ProductsService
   ) {}
 
@@ -23,13 +24,16 @@ export class LipsComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.LipsProducts = this.productService.getListLip();
+    this.productService.getLipsProducts().subscribe((products) => {
+      this.LipsProducts = products;
+    });
   }
 
   navigate(): void {
-    /*const currentUser = this.localStorage.getItem('CURRENT_USER') as User;
-    const route = '/admin/' + currentUser.nickName + '/add/';
-    this.route.navigate([route]);*/
+    const urlTree = this.router.parseUrl(this.router.url);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+    const route = '/admin/' + adm + '/add/';
+    this.router.navigate([route]);
   }
 
   deleteProductLip(item: Product): void {

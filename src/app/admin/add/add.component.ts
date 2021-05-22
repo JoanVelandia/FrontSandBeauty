@@ -81,19 +81,15 @@ export class AddComponent implements OnInit {
       status
     );
     console.log(item.id);
-    this.productService
-      .saveProduct(item);
+    this.productService.saveProduct(item);
     alert('Producto añadido');
-    const urlTree = this.router.parseUrl(this.router.url);
-    const adm =
-      urlTree.root.children[PRIMARY_OUTLET].segments[1].path + '/eyes';
-    this.navigateEye('admin/' + adm);
+    this.discard();
   }
 
   discard(): void {
     const urlTree = this.router.parseUrl(this.router.url);
-    const adm =
-      urlTree.root.children[PRIMARY_OUTLET].segments[1].path + '/eyes';
-    this.navigateEye('admin/' + adm);
+    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+    const URI = 'admin/' + adm + '/eyes';
+    this.navigateEye(URI);
   }
 }

@@ -33,48 +33,40 @@ export class LoginComponent implements OnInit {
       const nickName = this.loginForm.controls.nickname.value;
       const password = this.loginForm.controls.password.value;
       this.usersService.auth(nickName, password).subscribe(
-        (usr) => {
-          console.log('usr: ' + usr);
+        () => {
           this.usersService.getUserByName(nickName).subscribe(
             (userFound) => {
-              console.log('usrFound: ' + userFound);
+              console.log('usrFound: ');
+              console.log(userFound);
               this.currentUser = userFound;
-
               this.initLogin();
-
-
             },
-            (error2) => {
-              console.error('error2: ' + error2);
+            (error) => {
+              console.error('error: ' + error);
             }
           );
         },
-        (error) => {
-          console.error('error: ' + error);
-        }
       );
     }
   }
   initLogin(): void {
     console.log('currentUser: ' + this.currentUser);
+    console.log(this.currentUser);
 
     if (this.currentUser !== null) {
       this.usersService.setSession(this.currentUser);
       this.currentUser.roles.forEach((element) => {
         if (element.description === 'ADMIN') {
-          console.log('is admin');
+          this.setLogin('/admin/');
         } else if (element.description === 'CLIENT') {
-          console.log('is client');
+          this.setLogin('/client/');
         }
       });
     } else {
       alert('unregister');
     }
   }
-  setLoginClient(): void {
-    this.router.navigate(['/client/' + this.currentUser.nickname + '/lips']);
-  }
-  setLoginAdmin(): void {
-    this.router.navigate(['/admin/' + this.currentUser.nickname]);
+  setLogin(rol: string): void {
+    this.router.navigate([rol + this.currentUser.nickname + '/lips']);
   }
 }
