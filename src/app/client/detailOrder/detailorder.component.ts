@@ -14,6 +14,7 @@ import { OrdersService } from 'src/app/core/services/orders/orders.service';
 export class DetailorderComponent implements OnInit {
   orders: Order[] = [];
   productsOrder: Product[] = [];
+  totales: number[] = [];
 
   constructor(
     private ActivatedRoute: ActivatedRoute,
@@ -22,10 +23,40 @@ export class DetailorderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loadOrders();
     this.showDetailProduct();
+    //this.totales.length = this.or;
+    this.totales.fill(0);
+    console.log(this.totales);
   }
 
-  showDetailProduct(): void {}
+  showDetailProduct(): void {
+    this.orders.forEach((currentOrder) => {
+      const urlTree = this.router.parseUrl(this.router.url);
+      const currentOrderId =
+        urlTree.root.children[PRIMARY_OUTLET].segments[3].path as unknown;
+      const myOrderId = currentOrderId as number;
 
-  loadOrders(): void {}
+      console.log('currentOrderId' + currentOrderId);
+      if ( currentOrder.purchaseId === myOrderId)
+      {
+        //METER CADA PRODUCTO EN EL ARREGLO DE PRODUCTOS
+      }
+    });
+  }
+
+  loadOrders(): void {
+    this.ordersService.getSales().subscribe((sales) => {
+      const urlTree = this.router.parseUrl(this.router.url);
+      const cli = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+      this.ordersService.getCurrentUser(cli).subscribe((usr: User) => {
+        this.orders = [];
+        for (const order of sales) {
+          if (usr.id === order.clientId) {
+            this.orders.push(order);
+          }
+        }
+      });
+    });
+  }
 }
