@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { PRIMARY_OUTLET, Router } from '@angular/router';
 import { Order } from 'src/app/core/models/order/order.model';
 import { User } from 'src/app/core/models/user/user.model';
 import { LocalStorageService } from 'src/app/core/services/localStorage/local-storage.service';
@@ -13,10 +13,7 @@ import { OrdersService } from 'src/app/core/services/orders/orders.service';
 export class OrdersComponent implements OnInit {
   user!: User;
   orders: Order[] = [];
-  constructor(
-    private ordersService: OrdersService,
-    private route: Router
-  ) {}
+  constructor(private ordersService: OrdersService, private router: Router) {}
   ngOnInit(): void {
     /*this.user = this.localStorageService.getItem('CURRENT_USER') as User;
     this.orders = this.ordersService.getOrders(this.user);*/
@@ -24,11 +21,15 @@ export class OrdersComponent implements OnInit {
   }
 
   loadOrders(): void {
-    this.orders = this.ordersService.getOrders();
+    this.ordersService.getSales().subscribe((sales) => {
+      this.orders = sales;
+    });
   }
 
   detailOrderNavigate(currentOrder: number): void {
-    const rou = '/client/' + this.user.nickname + '/detailOrder/';
-    this.route.navigate([rou + currentOrder]);
+    const urlTree = this.router.parseUrl(this.router.url);
+    const cli = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+    const route = '/client/' + cli + '/detailOrder/';
+    this.router.navigate([route + currentOrder]);
   }
 }

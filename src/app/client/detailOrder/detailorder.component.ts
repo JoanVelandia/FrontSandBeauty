@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
 import { Order } from 'src/app/core/models/order/order.model';
 import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
@@ -16,7 +16,8 @@ export class DetailorderComponent implements OnInit {
   productsOrder: Product[] = [];
 
   constructor(
-    private route: ActivatedRoute,
+    private ActivatedRoute: ActivatedRoute,
+    private router: Router,
     private ordersService: OrdersService
   ) {}
 
@@ -25,8 +26,11 @@ export class DetailorderComponent implements OnInit {
   }
 
   showDetailProduct(): void {
-    /*const user = this.localStorageService.getItem('CURRENT_USER') as User;
-    const productID = this.route.snapshot.paramMap.get('id');
+    const urlTree = this.router.parseUrl(this.router.url);
+    const clientName = urlTree.root.children[PRIMARY_OUTLET].segments[1].path;
+    this.ordersService.getClient(clientName);
+
+    /*const productID = this.route.snapshot.paramMap.get('id');
     this.orders = this.ordersService.getOrdersOf(user);
     this.loadOrders();
     console.log('readed: ' + this.orders.length + ' ordes');
@@ -39,6 +43,8 @@ export class DetailorderComponent implements OnInit {
   }
 
   loadOrders(): void {
-    this.orders = this.ordersService.getOrders();
+    this.ordersService.getSales().subscribe((sales) => {
+      this.orders = sales;
+    });
   }
 }

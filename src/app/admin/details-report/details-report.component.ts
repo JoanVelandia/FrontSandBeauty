@@ -21,15 +21,15 @@ export class DetailsReportComponent implements OnInit {
 
   ngOnInit(): void {
     const urlTree = this.router.parseUrl(this.router.url);
-    const adm = urlTree.root.children[PRIMARY_OUTLET].segments[3].path;
-    this.idCurrentOrder = adm;
+    const ord = urlTree.root.children[PRIMARY_OUTLET].segments[3].path;
+    this.idCurrentOrder = ord;
     this.loadProducts();
   }
 
   loadProducts(): void {
-    this.order = this.calculateTotal(
-      this.orderService.getOrder(this.idCurrentOrder)
-    );
+    this.orderService.getSale(this.idCurrentOrder).subscribe((order) => {
+      this.order = this.calculateTotal(order);
+    });
   }
 
   calculateTotal(order: Order): Order {
