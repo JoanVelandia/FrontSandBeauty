@@ -7,7 +7,7 @@ export class User {
     public nickname: string,
     public password: string,
     public address: string | null,
-    public purchases: Order[] | any[],
+    public purchases: Order[]/* | any[]*/,
     public roles: Rol[]
   ){}
 }

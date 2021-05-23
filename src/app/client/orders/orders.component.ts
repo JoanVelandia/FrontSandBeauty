@@ -13,6 +13,7 @@ import { OrdersService } from 'src/app/core/services/orders/orders.service';
 export class OrdersComponent implements OnInit {
   user!: User;
   orders: Order[] = [];
+  tot: number[] = [];
   constructor(private ordersService: OrdersService, private router: Router) {}
   ngOnInit(): void {
     this.loadOrders();
@@ -29,6 +30,17 @@ export class OrdersComponent implements OnInit {
             this.orders.push(order);
           }
         }
+        this.tot.length = this.orders.length;
+        this.tot.fill(0);
+        this.orders.forEach((ord, index) => {
+          let myTot = 0;
+          ord.products.forEach((product) => {
+            myTot += product.total;
+          });
+          console.log('myTot ' + myTot);
+          this.tot[index] = myTot;
+          myTot = 0;
+        });
       });
     });
   }

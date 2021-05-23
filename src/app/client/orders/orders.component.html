@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <div class="box" style="margin: 0;">
           <div class="box-header with-border">
-            <h3 class="box-title">Pedido N° {{i}}</h3>
+            <h3 class="box-title">Pedido N° {{currentOrder.purchaseId}}</h3>
           </div>
           <div class="box-body table-responsive">
             <table class="table table-bordered">
@@ -15,9 +15,9 @@
               </tr>
               <tr>
                 <td>{{currentOrder.date}}</td>
-                <td>{{currentOrder.products[0].total| currency}}</td>
+                <td>{{tot[i]| currency}}</td>
                 <td>
-                  <a (click)="detailOrderNavigate(i)">
+                  <a (click)="detailOrderNavigate(currentOrder.purchaseId)">
                     <button type="button" class="btn btn-block btn-danger">
                       Ver
                     </button>

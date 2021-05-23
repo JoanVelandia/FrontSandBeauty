@@ -23,6 +23,7 @@ export class HttpInterceptorService implements HttpInterceptor {
       const requestClone = request.clone({
         headers: request.headers.set('authorization', token),
       });
+
       return next.handle(requestClone).pipe(
         tap((response: HttpEvent<any>) => {
           if (response instanceof HttpResponse) {

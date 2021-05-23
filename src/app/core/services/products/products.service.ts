@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductsService {
+
   EyesProducts: Product[] = [];
   FaceProducts: Product[] = [];
   LipsProducts: Product[] = [];
@@ -81,5 +82,10 @@ export class ProductsService {
   get(idBefore: string): Observable<Product> {
     const URI = '/SandBeauty/api/products/' + idBefore;
     return this.request.get<Product>(URI);
+  }
+
+  getThoseProducts(productsOrder: any[]): Observable<Product[]> {
+    const URI = '/SandBeauty/api/products/those';
+    return this.request.get<Product[]>(URI);
   }
 }

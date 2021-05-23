@@ -1,32 +1,45 @@
-<div *ngFor="let item of productsOrder; index as i">
-  <div class="box-body">
-    <h4 style="
-        background-color: #f7f7f7;
-        font-size: 18px;
-        text-align: center;
-        padding: 7px 10px;
-        margin-top: 0;
-        font-weight: bold;
-      ">
-      {{ item.name }}
-    </h4>
-    <div class="media">
-      <div class="media-left">
-        <a href="" class="ad-click-event">
-          <img [src]="item.imgUrl" alt="ArchitectUI Vue.js Admin Template" class="media-object" style="
-              width: 150px;
-              height: auto;
-              border-radius: 4px;
-              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-            " />
-        </a>
+<div *ngIf="productsOrder.length === productsOrder.length">
+  <div *ngFor="let item of productsOrder; index as i;">
+    <section class="content" style="padding: 0px; min-height: 0">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box" style="margin: 0">
+            <div class="box-header with-border">
+              <h3 class="box-title">{{ products[i].name }}</h3>
+            </div>
+            <div class="box-body table-responsive">
+              <table class="table table-bordered">
+                <tr>
+                  <th>Identificacion</th>
+                  <th>Precio</th>
+                  <th>Cantidad comprada</th>
+                  <th>Total</th>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="media">
+                      <div class="media-left">
+                        <a href="" class="ad-click-event">
+                          <img [src]="products[i].imgUrl" alt="ArchitectUI Vue.js Admin Template" class="media-object"
+                            style="
+                            width: 150px;
+                            height: auto;
+                            border-radius: 4px;
+                            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+                          " />
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                  <td>{{ item.price }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ item.total }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="media-body">
-        <h4 style="margin-top: 0">
-          Producto con envio ─ {{ item.price | currency }}
-        </h4>
-        <p>{{ item.description }}</p>
-      </div>
-    </div>
+    </section>
   </div>
 </div>

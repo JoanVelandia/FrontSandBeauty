@@ -1,4 +1,4 @@
-interface Purchases {
+export interface Purchases {
   productId: number;
   quantity: number;
   price: number;
