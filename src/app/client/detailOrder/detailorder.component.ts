@@ -31,18 +31,18 @@ export class DetailorderComponent implements OnInit {
   }
 
   showDetailProduct(): void {
-    this.orders.forEach((currentOrder) => {
+    /*this.orders.forEach((currentOrder) => {
       const urlTree = this.router.parseUrl(this.router.url);
       const currentOrderId =
-        urlTree.root.children[PRIMARY_OUTLET].segments[3].path as unknown;
+      urlTree.root.children[PRIMARY_OUTLET].segments[3].path as unknown;
       const myOrderId = currentOrderId as number;
 
       console.log('currentOrderId' + currentOrderId);
       if ( currentOrder.purchaseId === myOrderId)
       {
-        //METER CADA PRODUCTO EN EL ARREGLO DE PRODUCTOS
+        METER CADA PRODUCTO EN EL ARREGLO DE PRODUCTOS
       }
-    });
+    });*/
   }
 
   loadOrders(): void {
