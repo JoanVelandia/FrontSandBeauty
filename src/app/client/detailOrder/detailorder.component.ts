@@ -15,14 +15,9 @@ import { OrdersService } from 'src/app/core/services/orders/orders.service';
 })
 export class DetailorderComponent implements OnInit {
   orders: Order[] = [];
-  products: Product[] = [];
   productsOrder: Purchases[] = [];
   currentOrderId!: string;
-  mineId: number[] = [];
 
-  loadedCharacter: {} | undefined;
-  arran: Observable<Product>[] = [];
-  help!: Observable<User>;
 
   constructor(
     private ActivatedRoute: ActivatedRoute,
@@ -33,7 +28,7 @@ export class DetailorderComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadOrders();
-    //this.getMineProducts();
+
   }
 
   loadOrders(): void {
@@ -42,26 +37,14 @@ export class DetailorderComponent implements OnInit {
 
     this.ordersService.getCurrentUser(currentUser).subscribe((user: User) => {
       this.currentOrderId =
-        urlTree.root.children[PRIMARY_OUTLET].segments[3].path;
+      urlTree.root.children[PRIMARY_OUTLET].segments[3].path;
       user.purchases.forEach((currentPurchase) => {
         const currentPurchaseID = currentPurchase.purchaseId;
         if (currentPurchaseID.toString() === this.currentOrderId.toString()) {
           this.productsOrder = currentPurchase.products;
-          this.productsOrder.forEach((element) => {
-            this.mineId.push(element.productId);
-          });
         }
       });
-      this.getMineProducts();
     });
   }
-  getMineProducts(): void {
-    this.mineId.forEach((element: number) => {
-      this.arran.push(this.ordersService.getProductById(element));
-    });
 
-    forkJoin(this.arran).subscribe((results) => {
-      this.products = results;
-    });
-  }
 }

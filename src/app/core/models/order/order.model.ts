@@ -3,6 +3,8 @@ export interface Purchases {
   quantity: number;
   price: number;
   total: number;
+  myURLImg: string;
+  nameProduct: string;
 }
 
 export class Order {
