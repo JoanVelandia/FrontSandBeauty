@@ -17,7 +17,6 @@ export class OrdersService {
   constructor(
     private request: HttpClient,
     private userService: UsersService,
-    private productService: ProductsService
   ) {}
 
   getOrder(id: string): Order {
@@ -63,18 +62,18 @@ export class OrdersService {
     return this.userService.getUserByName(name);
   }
 
-  getProductById(id: number): Observable<Product> {
+  /*getProductById(id: number): Observable<Product> {
     return this.productService.getProductById(id);
-  }
-
-  getRealProducts(productsOrder: any[]): Observable<Product[]> {
-    return this.productService.getThoseProducts(productsOrder);
-  }
+  }*/
 
   saveOrder(newOrder: Order): Observable<Product> {
     return this.request.post<Product>(
       '/SandBeauty/api/sales/save',
       newOrder
     );
+  }
+
+  getLastPurchaseId(): Observable<number> {
+    return this.request.get<number>('/SandBeauty/api/sales/last');
   }
 }

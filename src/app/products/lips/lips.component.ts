@@ -19,7 +19,7 @@ export class LipsComponent implements OnInit {
 
   constructor(
     private productService: ProductsService,
-    private ordersService: OrdersService,
+    private orderService: OrdersService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -43,44 +43,42 @@ export class LipsComponent implements OnInit {
       const productBought = item;
       const uId = user.id;
       const nowDate = new Date();
-     /*  const xs = '2021-04-10T17:30:00';
-      const currentDate = nowDate.getFullYear() + '-' + (nowDate.getMonth() + 1) + '-' + nowDate.getDay() + 'T' +
-      nowDate.getHours() + ':' + (nowDate.getMinutes()) + ':' + (nowDate.getSeconds()); */
       const cashPayment = true;
       const delivered = false;
       const purchasedProducts: Purchases[] = [];
-      const purchasedProduct: Purchases = {
-        productId: 2,
-        purchaseId: 1,
-        quantity: 2,
-        price: 2,
-        total: 2,
-        myURLImg:
-        'https://definicion.mx/wp-content/uploads/2015/01/Abstracto.jpg',
-        nameProduct: 'xd',
-      };
-      purchasedProducts.push(purchasedProduct);
-      purchasedProduct.productId = productBought.id;
-      const tot = 20.2;
-      const newOrder: Order = new Order(-1, uId, nowDate, cashPayment, delivered, purchasedProducts, tot);
-      console.log('entre :3');
-      console.log(newOrder);
-      this.ordersService.saveOrder(newOrder).subscribe(() => { });
+      const quantityBought = 20;
+
+      this.orderService
+        .getLastPurchaseId()
+        .subscribe((idLastPurchase: number) => {
+          const purchasedProduct: Purchases = {
+            productId: productBought.id,
+            purchaseId: idLastPurchase,
+            quantity: 20,
+            price: productBought.price,
+            total: productBought.price * quantityBought,
+            myURLImg: productBought.imgUrl,
+            nameProduct: productBought.name,
+          };
+          purchasedProducts.push(purchasedProduct);
+
+          const totalPurchase = productBought.price * quantityBought;
+          const newOrder: Order = new Order(
+            idLastPurchase,
+            uId,
+            nowDate,
+            cashPayment,
+            delivered,
+            purchasedProducts,
+            totalPurchase
+          );
+          console.log('entre :3');
+          console.log(newOrder);
+          this.orderService.saveOrder(newOrder).subscribe(() => {
+            alert('Producto añadido a su historial de compras');
+          });
+        });
     });
-
-    /*const products: Product[] = [];
-
-    products.push(product);
-    const date = new Date().toDateString();
-    //const newOrder: Order = new Order(
-    //buyer.nickName,
-    //date,
-    //products,
-    //product.price
-    //);
-    //this.localStorage.setItem('order' + amoutOrders, newOrder);
-    amoutOrders = Number(amoutOrders) + Number(1);
-    this.localStorage.setItem('amoutOrders', String(amoutOrders));*/
   }
 
   addCart(product: Product): void {
