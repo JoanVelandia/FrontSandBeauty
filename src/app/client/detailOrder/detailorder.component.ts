@@ -1,10 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
-import { forkJoin, merge, Observable } from 'rxjs';
-import { flatMap } from 'rxjs/internal/operators/mergeMap';
 import { Order, Purchases } from 'src/app/core/models/order/order.model';
-import { Product } from 'src/app/core/models/product/product.model';
 import { User } from 'src/app/core/models/user/user.model';
 import { OrdersService } from 'src/app/core/services/orders/orders.service';
 

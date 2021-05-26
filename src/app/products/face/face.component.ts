@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from 'src/app/core/models/order/order.model';
 import { Product } from 'src/app/core/models/product/product.model';
-import { User } from 'src/app/core/models/user/user.model';
 import { ProductsService } from 'src/app/core/services/products/products.service';
-import { LocalStorageService } from './../../core/services/localStorage/local-storage.service';
 
 @Component({
   selector: 'app-face',
@@ -13,17 +10,19 @@ import { LocalStorageService } from './../../core/services/localStorage/local-st
 export class FaceComponent implements OnInit {
   faceProducts: Product[] = [];
   carts: Product[] = [];
-  client = false;
+  isClient = false;
 
   constructor(private productService: ProductsService) {}
 
   ngOnInit(): void {
     this.loadProducts();
+
   }
 
   loadProducts(): void {
     this.productService.getFaceProducts().subscribe((products) => {
       this.faceProducts = products;
+      this.isClient = this.productService.isLogIn();
     });
   }
 

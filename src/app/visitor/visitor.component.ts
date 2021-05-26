@@ -15,6 +15,7 @@ export class VisitorComponent implements OnInit {
     const usr = urlTree.root.children[PRIMARY_OUTLET].segments[0].path;
 
     if (usr === 'visitor') {
+      console.log('logout from visitor')
       this.userService.logout();
     }
     this.router.navigate(['visitor/lips']);

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Order } from '../../models/order/order.model';
 import { User } from '../../models/user/user.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { UsersService } from 'src/app/core/services/users/users.service';
 import { Product } from '../../models/product/product.model';
 import { ProductsService } from '../products/products.service';
@@ -10,16 +10,15 @@ import { ProductsService } from '../products/products.service';
   providedIn: 'root',
 })
 export class OrdersService {
-
-  /*getNewOrders(): Order[] {
-    this.localStorage.getNewOrders();
-  } */
-
   ord!: Order;
   currentUser!: User;
   orders: Order[] = [];
 
-  constructor(private request: HttpClient, private userService: UsersService, private productService: ProductsService) {}
+  constructor(
+    private request: HttpClient,
+    private userService: UsersService,
+    private productService: ProductsService
+  ) {}
 
   getOrder(id: string): Order {
     this.getSale(id).subscribe((sale) => {
@@ -45,7 +44,10 @@ export class OrdersService {
 
   getOrdersOf(): Order[] {
     const ordersFind: Order[] = [];
-    this.currentUser = this.userService.getCurrentUser();
+    const myUser = this.userService.getCurrentUser();
+    if (myUser !== null) {
+      this.currentUser = myUser;
+    }
     this.getSales().subscribe((sales) => {
       this.orders = sales;
       for (const order of this.orders) {
@@ -69,7 +71,10 @@ export class OrdersService {
     return this.productService.getThoseProducts(productsOrder);
   }
 
-  /*getNewOrders(): Order[] {
-    this.localStorage.getNewOrders();
-  } */
+  saveOrder(newOrder: Order): Observable<Product> {
+    return this.request.post<Product>(
+      '/SandBeauty/api/sales/save',
+      newOrder
+    );
+  }
 }

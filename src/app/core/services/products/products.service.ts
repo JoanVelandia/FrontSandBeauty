@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Product } from '../../models/product/product.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UsersService } from '../users/users.service';
+import { User } from '../../models/user/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,7 @@ export class ProductsService {
   LipsProducts: Product[] = [];
   product!: Product;
 
-  constructor(private request: HttpClient) {}
+  constructor(private request: HttpClient, private userService: UsersService) {}
 
   getListEye(): Product[] {
     this.getEyesProducts().subscribe((eyesProducts) => {
@@ -88,4 +90,13 @@ export class ProductsService {
     const URI = '/SandBeauty/api/products/those';
     return this.request.get<Product[]>(URI);
   }
+
+  isLogIn(): boolean {
+    return this.userService.isLogIn();
+  }
+
+  getUserByName(buyerName: string): Observable<User> {
+    return this.userService.getUserByName(buyerName);
+  }
+
 }

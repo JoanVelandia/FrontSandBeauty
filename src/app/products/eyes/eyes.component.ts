@@ -14,7 +14,7 @@ import { LocalStorageService } from './../../core/services/localStorage/local-st
 export class EyesComponent implements OnInit {
   eyesProducts: Product[] = [];
   carts: Product[] = [];
-  client = false;
+  isClient = false;
 
   constructor(private productService: ProductsService) {}
 
@@ -24,6 +24,7 @@ export class EyesComponent implements OnInit {
 
   loadProducts(): void {
     this.productService.getEyesProducts().subscribe( products => {
+      this.isClient = this.productService.isLogIn();
       this.eyesProducts = products;
     });
   }

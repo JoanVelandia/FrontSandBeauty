@@ -9,7 +9,6 @@ import { Order } from '../../models/order/order.model';
   providedIn: 'root',
 })
 export class LocalStorageService {
-
   lipsProducts: Product[] = [];
   faceProducts: Product[] = [];
   eyesProducts: Product[] = [];
@@ -21,9 +20,11 @@ export class LocalStorageService {
 
   constructor() {}
 
-
   setSession(currentUser: User): void {
-    localStorage.setItem(this.currentUser, JSON.stringify('currentUser'));
+    localStorage.setItem(
+      this.currentUser,
+      JSON.stringify(currentUser.nickname)
+    );
   }
 
   isLogIn(): boolean {
@@ -68,5 +69,4 @@ export class LocalStorageService {
   logOut(): void {
     localStorage.clear();
   }
-
 }

@@ -22,8 +22,8 @@
         </a>
       </div>
       <div class="media-body">
-        <div class="clearfix">
-          <p class="pull-right" *ngIf="client">
+        <div class="clearfix" *ngIf="isClient">
+          <p class="pull-right">
             <a  class="btn btn-success btn-sm ad-click-event fas fa-shopping-cart">
               Comprar</a>
               <a class="btn btn-success btn-sm ad-click-event fas fa-shopping-cart" (click)="addCart(item)">
