@@ -51,9 +51,13 @@ export class LipsComponent implements OnInit {
       this.orderService
         .getLastPurchaseId()
         .subscribe((idLastPurchase: number) => {
+          const addID = idLastPurchase + 1;
+          console.log('addID');
+          console.log(addID);
+
           const purchasedProduct: Purchases = {
             productId: productBought.id,
-            purchaseId: idLastPurchase,
+            purchaseId: addID,
             quantity: 20,
             price: productBought.price,
             total: productBought.price * quantityBought,
@@ -64,7 +68,7 @@ export class LipsComponent implements OnInit {
 
           const totalPurchase = productBought.price * quantityBought;
           const newOrder: Order = new Order(
-            idLastPurchase,
+            addID,
             uId,
             nowDate,
             cashPayment,
