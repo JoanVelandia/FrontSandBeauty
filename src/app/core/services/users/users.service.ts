@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Auth } from '../../models/auth/auth.model';
 import { User } from '../../models/user/user.model';
@@ -44,5 +45,9 @@ export class UsersService {
   }
   getCurrentUser(): User {
     return this.currentUser;
+  }
+
+  register(user: User): Observable<User> {
+    return this.request.post<User>('/SandBeauty/api/user/saveClient', user);
   }
 }
