@@ -5,14 +5,6 @@ import { Product } from 'src/app/core/models/product/product.model';
 import { OrdersService } from 'src/app/core/services/orders/orders.service';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
-import {MatDialog} from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
-
 @Component({
   selector: 'app-lips',
   templateUrl: './lips.component.html',
@@ -31,20 +23,8 @@ export class LipsComponent implements OnInit {
     private orderService: OrdersService,
     private route: ActivatedRoute,
     private router: Router,
-    public dialog: MatDialog
   ) {}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(LipsComponent, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
-  }
 
   ngOnInit(): void {
     this.loadProducts();

@@ -37,7 +37,14 @@ export class FaceComponent implements OnInit {
   }
 
   deleteProductFace(item: Product): void {
-    this.productService.delete(item).subscribe(() => {});
+    this.productService.delete(item).subscribe(() => {
+      this.FaceProducts.forEach((value, index) => {
+        if (value.id === item.id) {
+          this.FaceProducts.splice(index, 1);
+          alert('Prodcuto eliminado correctamente');
+        }
+      });
+    });
   }
 
   update(item: Product): void {

@@ -42,6 +42,7 @@ export class EyesComponent implements OnInit {
       this.eyesProducts.forEach((value, index) => {
         if (value.id === item.id) {
           this.eyesProducts.splice(index, 1);
+          alert('Prodcuto eliminado correctamente');
         }
       });
     });

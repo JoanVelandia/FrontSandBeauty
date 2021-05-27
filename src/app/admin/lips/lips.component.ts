@@ -37,7 +37,14 @@ export class LipsComponent implements OnInit {
   }
 
   deleteProductLip(item: Product): void {
-    this.productService.delete(item).subscribe(() => {});
+    this.productService.delete(item).subscribe(() => {
+      this.LipsProducts.forEach((value, index) => {
+        if (value.id === item.id) {
+          this.LipsProducts.splice(index, 1);
+          alert('Prodcuto eliminado correctamente');
+        }
+      });
+    });
   }
 
   update(item: Product): void {
