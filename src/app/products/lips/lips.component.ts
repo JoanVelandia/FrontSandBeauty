@@ -1,28 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
 import { Order, Purchases } from 'src/app/core/models/order/order.model';
 import { Product } from 'src/app/core/models/product/product.model';
-import { User } from 'src/app/core/models/user/user.model';
 import { OrdersService } from 'src/app/core/services/orders/orders.service';
 import { ProductsService } from 'src/app/core/services/products/products.service';
-import { LocalStorageService } from './../../core/services/localStorage/local-storage.service';
+
+import {MatDialog} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-lips',
   templateUrl: './lips.component.html',
   styleUrls: ['./lips.component.scss'],
 })
+
 export class LipsComponent implements OnInit {
   lipsProducts: Product[] = [];
   carts: Product[] = [];
   isClient = false;
+  animal!: string;
+  name!: string;
 
   constructor(
     private productService: ProductsService,
     private orderService: OrdersService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LipsComponent, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -98,4 +120,5 @@ export class LipsComponent implements OnInit {
     this.localStorage.setItem('amoutCarts', String(amoutCarts));
     this.localStorage.setItem('cart' + amoutCarts, this.carts);*/
   }
+
 }

@@ -25,6 +25,27 @@ export class LocalStorageService {
       this.currentUser,
       JSON.stringify(currentUser.nickname)
     );
+    localStorage.setItem(
+      'rol', JSON.stringify(currentUser.roles[0].description)
+    );
+  }
+
+  getRolAdmin(): boolean {
+    if(this.getItem('rol') !== null){
+      if(this.getItem('rol') === 'ADMIN'){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  getRolClient(): boolean {
+    if(this.getItem('rol') !== null){
+      if(this.getItem('rol') === 'CLIENT'){
+        return true;
+      }
+    }
+    return false;
   }
 
   isLogIn(): boolean {

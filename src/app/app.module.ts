@@ -9,6 +9,8 @@ import { EyesComponent } from './products/eyes/eyes.component';
 import { FaceComponent } from './products/face/face.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from './core/services/interceptor/auth/http-interceptor-service.service';
+import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent, EyesComponent, FaceComponent, LipsComponent],
@@ -19,6 +21,7 @@ import { HttpInterceptorService } from './core/services/interceptor/auth/http-in
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatFormFieldModule
   ],
   providers: [
     {
@@ -26,6 +29,7 @@ import { HttpInterceptorService } from './core/services/interceptor/auth/http-in
       useClass: HttpInterceptorService,
       multi: true,
     },
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
 })
