@@ -1,7 +1,7 @@
 {
   "/SandBeauty/api/*":
   {
-    "target": "http://localhost:8090",
+    "target": "http://ultimate-env.eba-dcdbejy6.us-east-2.elasticbeanstalk.com",
     "secure": false,
     "loglevel": "debug"
   }
